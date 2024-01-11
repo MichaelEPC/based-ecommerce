@@ -23,6 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
+public
 # Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos,node
 
