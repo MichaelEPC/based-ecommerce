@@ -1,5 +1,8 @@
+import Card from '../../Components/Card'
 import Layout from '../../Components/Layout'
 import Navbar from '../../Components/Navbar'
+import { ProductProvider } from '../../Context'
+
 
 function Home() {
 
@@ -8,6 +11,7 @@ function Home() {
     <Navbar/>
      <Layout>
         <p>Home</p>
+        <Card/>
      </Layout>
     </>
   )
