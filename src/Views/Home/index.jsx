@@ -17,6 +17,8 @@ function Home() {
     infoProductOpen,
     setProductInfoFill,
     ProductInfoFill,
+    setShoppingProducts,
+    shoppingProducts,
   } = React.useContext(ProductContext);
 
   return (
@@ -27,15 +29,16 @@ function Home() {
       {
         productCard?.map( productCard => (
           <Card key={productCard.id} data={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}
-           setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill}
+           setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill} setShoppingProducts={setShoppingProducts}
+           shoppingProducts={shoppingProducts}
            />
         ))
       }
       </div>
       <ProductInfo 
-      key={productCard.id} title={productCard.title} image={productCard.image} tagProduct={productCard.category} 
-      productPrice={productCard.price} descriptionProduct={productCard.description} setItemNumber={setItemNumber} 
-      itemNumber={itemNumber} setinfoProductOpen={setinfoProductOpen}
+      setItemNumber={setItemNumber} itemNumber={itemNumber} infoProductOpen={infoProductOpen} 
+      setinfoProductOpen={setinfoProductOpen} ProductInfoFill={ProductInfoFill} setShoppingProducts={setShoppingProducts}
+      shoppingProducts={shoppingProducts}
       />
      </Layout>
     </>

@@ -4,12 +4,25 @@ import CallForProducts from "../Hooks/CallForProducts";
 const ProductContext = React.createContext();
 
 function ProductProvider({children}) {
+    // Product Array : Get information products / API
     const [productCard, setProductCard] = React.useState([]);
+
+    // Shopping cart : Count the number of items added on the cart
     const [itemNumber, setItemNumber] = React.useState(0);
+
+    // Info Product : Open aside with product info
     const [infoProductOpen, setinfoProductOpen] = React.useState(false);
+
+    // Array Info Product : Saves the info of the product selected in an array 
     const [ProductInfoFill, setProductInfoFill] = React.useState([]);
-    CallForProducts(setProductCard);
     
+
+    // Array Products Cart : Saves products in an array that been added to the Shopping cart
+    const [shoppingProducts, setShoppingProducts ] = React.useState([]);
+
+
+    CallForProducts(setProductCard);
+
     return (
         <ProductContext.Provider value={{
             setProductCard,
@@ -21,6 +34,8 @@ function ProductProvider({children}) {
             infoProductOpen,
             setProductInfoFill,
             ProductInfoFill,
+            setShoppingProducts,
+            shoppingProducts,
         }}>
             {children}
         </ProductContext.Provider>
