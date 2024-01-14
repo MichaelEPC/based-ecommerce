@@ -11,16 +11,18 @@ function Home() {
     setProductCard,
     productCard,
     CallForProducts,
+    setItemNumber,
+    itemNumber,
   } = React.useContext(ProductContext);
-  console.log(productCard);
+
   return (
     <>
-    <Navbar/>
+    <Navbar itemNumber={itemNumber}/>
      <Layout>
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
       {
         productCard?.map( productCard => (
-          <Card key={productCard.id} data={productCard}/>
+          <Card key={productCard.id} data={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}/>
         ))
       }
       </div>
