@@ -1,5 +1,6 @@
+import InfoFillProduct from "../../Hooks/InfoFillProduct";
 
-function Card({data, setItemNumber, itemNumber}) {
+function Card({data, setItemNumber, itemNumber, setinfoProductOpen, setProductInfoFill}) {
 
     return (
       <>
@@ -9,7 +10,9 @@ function Card({data, setItemNumber, itemNumber}) {
             onClick={() => {
                 setItemNumber(itemNumber + 1);
             }}/></div>
-            <img src={data.image} alt="product-img" className="w-full h-52 object-cover rounded-2xl"/>
+            <img src={data.image} alt="product-img" className="w-full h-52 object-cover rounded-2xl"
+            onClick={() => InfoFillProduct(data, setinfoProductOpen, setProductInfoFill)}
+            />
             <div className="bg-white w-full">
                 <span className="absolute bottom-2 left-4 bg-white text-black pr-2 pl-1 font-semibold text-sm rounded-e-2xl">
                     {data.category}
