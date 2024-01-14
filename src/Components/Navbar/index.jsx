@@ -21,7 +21,7 @@ const right = [
 
 function Navbar() {
   return (
-    <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
+    <nav className="bg-white flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
       <ul className="flex items-center gap-3">
         {left.map(({name, to, className}) => ( 
           <NavItems key={name} className={className} navbarName={name} to={to}/>

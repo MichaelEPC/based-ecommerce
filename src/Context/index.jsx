@@ -6,10 +6,13 @@ const ProductContext = React.createContext();
 
 function ProductProvider({children}) {
     const [productCard, setProductCard] = React.useState([]);
-    CallForProducts();
+    CallForProducts(setProductCard);
+
     return (
         <ProductContext.Provider value={{
-            CallForProducts
+            setProductCard,
+            productCard,
+            CallForProducts,
         }}>
             {children}
         </ProductContext.Provider>
