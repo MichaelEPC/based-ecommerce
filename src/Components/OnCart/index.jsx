@@ -15,6 +15,8 @@ function OnCart() {
         shoppingProducts,
         setisOpenShoppingCart,
         isOpenShoppingCart,
+        myOrders,
+        setMyOrders,
       } = React.useContext(ProductContext);
 
     // Add To cart : Add Product To The Shopping Cart Array 
@@ -24,6 +26,21 @@ function OnCart() {
         cartProducts.push(data);    
         setShoppingProducts(cartProducts);
     }
+
+    // Add To MyOrders : Add Product To The MyOrders Array 
+    const addToMyOrders = (shoppingProducts) => {
+      setItemNumber(itemNumber-itemNumber);
+      const cartProducts = shoppingProducts;
+      const MyOrder = {
+        date: "02.12.2023",
+        products: cartProducts,
+        totalprice: sumProductCart(cartProducts),
+        totalproducts: cartProducts.lenght,
+      }
+      const listMyOrders = myOrders;
+      listMyOrders.push(MyOrder);    
+      setMyOrders(listMyOrders);
+  }
 
     return (
       <>
@@ -41,9 +58,15 @@ function OnCart() {
             itemNumber={itemNumber} setItemNumber={setItemNumber}
             />))}
             </div>
-            <div className='info-cart-container flex justify-between'>
-              <p className='font-semibold p-1 ml-4 mt-2'>{`Products: ${totalProductCart(shoppingProducts)}`}</p>
-              <p className='bg-green-500 text-white font-semibold rounded-lg p-1 mr-6 mt-2'>{`Total Price: $${sumProductCart(shoppingProducts)}`}</p>
+            <div className='info-cart-container'>
+              <div className='flex justify-between'>
+                <p className='font-semibold p-1 ml-4 mt-2 underline'>{`Products: ${totalProductCart(shoppingProducts)}`}</p>
+                <p className='bg-green-500 text-white font-semibold rounded-lg p-1 mr-6 mt-2'>{`Total Price: $${sumProductCart(shoppingProducts)}`}</p>
+              </div>
+              <div className='flex justify-center'>
+                <button className='w-64 h-12 mt-5 bg-green-500 rounded-lg font-semibold text-white' 
+                >CheckOut</button>
+              </div>
             </div>
        </aside>
       </>

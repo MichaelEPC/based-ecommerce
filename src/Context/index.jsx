@@ -15,7 +15,6 @@ function ProductProvider({children}) {
 
     // Array Info Product : Saves the info of the product selected in an array 
     const [ProductInfoFill, setProductInfoFill] = React.useState([]);
-    
 
     // Array Products Cart : Saves products in an array that been added to the Shopping cart
     const [shoppingProducts, setShoppingProducts ] = React.useState([]);
@@ -23,6 +22,10 @@ function ProductProvider({children}) {
     // Aside Products Cart : Show the aside cart with the products that been addedn array that been added to the Shopping cart
     const [isOpenShoppingCart, setisOpenShoppingCart ] = React.useState(false);
 
+    // Array Products Orders : Saves products in an array that been added to the Orders section
+    const [myOrders, setMyOrders ] = React.useState([]);
+    
+    console.log(myOrders);
     CallForProducts(setProductCard);
     
     return (
@@ -40,6 +43,8 @@ function ProductProvider({children}) {
             shoppingProducts,
             setisOpenShoppingCart,
             isOpenShoppingCart,
+            myOrders,
+            setMyOrders,
         }}>
             {children}
         </ProductContext.Provider>

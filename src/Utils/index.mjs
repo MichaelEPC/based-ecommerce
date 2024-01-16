@@ -1,4 +1,4 @@
-
+//  Add Products Price Cart : Show total Price Of Products On the Shopping Cart 
 const sumProductCart = (shoppingProducts) => {
     let totaPrice = 0;
     for (let i = 0; i < shoppingProducts.length; i++) {
@@ -8,9 +8,11 @@ const sumProductCart = (shoppingProducts) => {
     return totaPrice;
 }
 
+//  Total Products On Cart : Show total Products On the Shopping Cart 
 const totalProductCart = (shoppingProducts) => {
     let amountProducts = shoppingProducts.length;
     return amountProducts;
 }   
+
 
 export {sumProductCart, totalProductCart}

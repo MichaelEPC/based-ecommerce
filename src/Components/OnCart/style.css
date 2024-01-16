@@ -1,7 +1,7 @@
 
 .card-box{
     width: 370px;
-    height: 64vh;
+    height: 72vh;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -12,3 +12,6 @@
     height: 500px;
 }
 
+.info-cart-container {
+    
+}
