@@ -1,6 +1,6 @@
 import './style.css'
 
-function ProductInfo({ setItemNumber, itemNumber, infoProductOpen, setinfoProductOpen, ProductInfoFill, shoppingProducts, setShoppingProducts, }) {
+function ProductInfo({ setItemNumber, itemNumber, infoProductOpen, setinfoProductOpen, ProductInfoFill, shoppingProducts, setShoppingProducts, setisOpenShoppingCart }) {
     
     // Add To cart : Add Product To The Shopping Cart Array 
     const addToCart = (data) => {
@@ -8,8 +8,15 @@ function ProductInfo({ setItemNumber, itemNumber, infoProductOpen, setinfoProduc
         const cartProducts = shoppingProducts;
         cartProducts.push(data);    
         setShoppingProducts(cartProducts);
+        openAsideCart()
     }
 
+    // Open Cart View : Open aside cart with products in it
+    const openAsideCart = () => {
+        setinfoProductOpen(false);
+        setisOpenShoppingCart(true);
+    }
+  
     return (
       <>
        <aside className={`${infoProductOpen ? 'product-info fixed bg-gray-100 border-black right-0' : 'hidden'}`}>

@@ -6,8 +6,8 @@ import MyOrder from '../MyOrder'
 import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
+import OnCart from '../../Components/OnCart'
 import './App.css'
-
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -27,6 +27,7 @@ function AppUI() {
     <>
     <BrowserRouter>
       <AppRoutes/>
+      <OnCart/>
     </BrowserRouter>
     </> 
   )

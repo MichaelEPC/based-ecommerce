@@ -8,9 +8,7 @@ import ProductInfo from '../../Components/ProductInfo'
 
 function Home() {
   const {
-    setProductCard,
     productCard,
-    CallForProducts,
     setItemNumber,
     itemNumber,
     setinfoProductOpen,
@@ -19,18 +17,20 @@ function Home() {
     ProductInfoFill,
     setShoppingProducts,
     shoppingProducts,
+    setisOpenShoppingCart,
+    isOpenShoppingCart,
   } = React.useContext(ProductContext);
 
   return (
     <>
-    <Navbar itemNumber={itemNumber}/>
+    <Navbar itemNumber={itemNumber} setisOpenShoppingCart={setisOpenShoppingCart} setinfoProductOpen={setinfoProductOpen}/>
      <Layout>
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
       {
         productCard?.map( productCard => (
           <Card key={productCard.id} data={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}
            setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill} setShoppingProducts={setShoppingProducts}
-           shoppingProducts={shoppingProducts}
+           shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
            />
         ))
       }
@@ -38,7 +38,7 @@ function Home() {
       <ProductInfo 
       setItemNumber={setItemNumber} itemNumber={itemNumber} infoProductOpen={infoProductOpen} 
       setinfoProductOpen={setinfoProductOpen} ProductInfoFill={ProductInfoFill} setShoppingProducts={setShoppingProducts}
-      shoppingProducts={shoppingProducts}
+      shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
       />
      </Layout>
     </>

@@ -20,9 +20,11 @@ function ProductProvider({children}) {
     // Array Products Cart : Saves products in an array that been added to the Shopping cart
     const [shoppingProducts, setShoppingProducts ] = React.useState([]);
 
+    // Aside Products Cart : Show the aside cart with the products that been addedn array that been added to the Shopping cart
+    const [isOpenShoppingCart, setisOpenShoppingCart ] = React.useState(false);
 
     CallForProducts(setProductCard);
-
+    
     return (
         <ProductContext.Provider value={{
             setProductCard,
@@ -36,6 +38,8 @@ function ProductProvider({children}) {
             ProductInfoFill,
             setShoppingProducts,
             shoppingProducts,
+            setisOpenShoppingCart,
+            isOpenShoppingCart,
         }}>
             {children}
         </ProductContext.Provider>

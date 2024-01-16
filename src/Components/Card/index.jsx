@@ -1,11 +1,12 @@
+import { ProductContext } from "../../Context";
 import InfoFillProduct from "../../Hooks/InfoFillProduct";
 
-function Card({data, setItemNumber, itemNumber, setinfoProductOpen, setProductInfoFill, shoppingProducts, setShoppingProducts}) {
-    
+function Card({data, setItemNumber, itemNumber, setinfoProductOpen, setProductInfoFill, shoppingProducts, setShoppingProducts, setisOpenShoppingCart}) {
+
     // Render Product Infomation : Saves Info product / Open aside info product
     const renderInfoProduct = () => {
         setProductInfoFill(data);    
-        setinfoProductOpen(true);
+        openAsideInfo()
     }
 
     // Add To cart : Add Product To The Shopping Cart Array 
@@ -14,6 +15,19 @@ function Card({data, setItemNumber, itemNumber, setinfoProductOpen, setProductIn
         const cartProducts = shoppingProducts;
         cartProducts.push(data);    
         setShoppingProducts(cartProducts);
+        openAsideCart();
+    }
+
+    // Open Product Info : Open aside with the product information
+    const openAsideInfo = () => {
+        setinfoProductOpen(true);
+        setisOpenShoppingCart(false);
+    }
+
+    // Open Cart View : Open aside cart with the products that been added
+    const openAsideCart = () => {
+        setinfoProductOpen(false);
+        setisOpenShoppingCart(true);
     }
 
     return (

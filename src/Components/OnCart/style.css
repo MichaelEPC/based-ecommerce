@@ -1,0 +1,14 @@
+
+.card-box{
+    width: 370px;
+    height: 64vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    top: 68px;
+}
+
+.products-container {
+    height: 500px;
+}
+

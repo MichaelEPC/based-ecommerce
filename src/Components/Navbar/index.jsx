@@ -20,7 +20,14 @@ const right = [
   { name: 'Sign-in', to: '/sing-in', className: 'text-white font-normal' },
 ]
 
-function Navbar({ itemNumber }) {
+function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen }) {
+
+  // Open Cart View : Open aside cart with products in it
+  const openAsideCart = () => {
+    setisOpenShoppingCart(true);
+    setinfoProductOpen(false);
+  }
+
   return (
     <nav className="bg-green-500 flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
       <ul className="flex items-center gap-3 ">
@@ -34,7 +41,8 @@ function Navbar({ itemNumber }) {
         ))}
         <li>
           <div className="">
-          <img src="src/imgs/bolso-shopping-cuadrado-con-asa-sm.png" alt="" />
+          <img src="src/imgs/bolso-shopping-cuadrado-con-asa-sm.png" alt="" className="cursor-pointer"
+          onClick={() => openAsideCart()}/>
           <div className="bg-white flex justify-center absolute rounded-full w-3 top-2 right-0">{ itemNumber }</div>
           </div>
         </li>
