@@ -1,7 +1,6 @@
 import NavItems from "./NavItems"
 
-
-// Parte izquierda del navbar
+// Left part of nav
 const left = [
   { name: 'YourStore', to: '/', className: 'font-semibold text-xl text-white mr-2' },
   { name: 'All', to: '/', className: 'text-white font-normal' },
@@ -12,7 +11,7 @@ const left = [
 { name: 'Others', to: '/others', className: 'text-white font-normal' }
 ]
 
-// Parte derecha del navbar
+// Right part of nav
 const right = [
   { name: 'user@gmail.com', className: 'text-gray-200 cursor-none' },
   { name: 'My Orders', to: '/my-orders', className: 'text-white font-normal' },

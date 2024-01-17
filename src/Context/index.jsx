@@ -22,12 +22,14 @@ function ProductProvider({children}) {
     // Aside Products Cart : Show the aside cart with the products that been addedn array that been added to the Shopping cart
     const [isOpenShoppingCart, setisOpenShoppingCart ] = React.useState(false);
 
+    // Array Products Order : Saves products in an array to be seen in a previous Order
+    const [previousOrder, setPreviousOrder ] = React.useState([]);
+    
     // Array Products Orders : Saves products in an array that been added to the Orders section
     const [myOrders, setMyOrders ] = React.useState([]);
-    
-    console.log(myOrders);
+
     CallForProducts(setProductCard);
-    
+
     return (
         <ProductContext.Provider value={{
             setProductCard,
@@ -45,6 +47,8 @@ function ProductProvider({children}) {
             isOpenShoppingCart,
             myOrders,
             setMyOrders,
+            previousOrder,
+            setPreviousOrder,
         }}>
             {children}
         </ProductContext.Provider>

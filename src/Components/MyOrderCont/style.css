@@ -1,0 +1,10 @@
+.my-order-container {
+    width: 520px;
+    height: 60vh;
+}
+
+.my-order-products-container {
+    height: 600px;
+    border: 1px solid black;
+}
+

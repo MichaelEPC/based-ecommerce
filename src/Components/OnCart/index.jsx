@@ -1,23 +1,22 @@
 import React from 'react';
 import CartItems from './CartItems';
-import { ProductContext } from '../../Context'
-import { data } from 'autoprefixer';
 import { sumProductCart, totalProductCart } from '../../Utils';
 import './style.css'
+import { Link } from 'react-router-dom';
 
-function OnCart() {
-    // Props for global context
-    const {
-        setItemNumber,
-        itemNumber,
-        setinfoProductOpen,
-        setShoppingProducts,
-        shoppingProducts,
-        setisOpenShoppingCart,
-        isOpenShoppingCart,
-        myOrders,
-        setMyOrders,
-      } = React.useContext(ProductContext);
+function OnCart({
+  setItemNumber,
+  itemNumber,
+  setinfoProductOpen,
+  setShoppingProducts,
+  shoppingProducts,
+  setisOpenShoppingCart,
+  isOpenShoppingCart,
+  myOrders,
+  setMyOrders,
+  setPreviousOrder,
+} 
+) {
 
     // Add To cart : Add Product To The Shopping Cart Array 
     const addToCart = (data) => {
@@ -28,18 +27,28 @@ function OnCart() {
     }
 
     // Add To MyOrders : Add Product To The MyOrders Array 
-    const addToMyOrders = (shoppingProducts) => {
+    const addToMyOrders = () => {
       setItemNumber(itemNumber-itemNumber);
       const cartProducts = shoppingProducts;
+      // Get Date
+      const today = new Date();
+      const day = today.getDate();
+      const month = today.getMonth();
+      const year = today.getFullYear();
+
       const MyOrder = {
-        date: "02.12.2023",
+        date: `${day}/${month}/${year}`,
         products: cartProducts,
         totalprice: sumProductCart(cartProducts),
-        totalproducts: cartProducts.lenght,
+        totalproducts: cartProducts.length,
       }
       const listMyOrders = myOrders;
       listMyOrders.push(MyOrder);    
+      setShoppingProducts([]);
       setMyOrders(listMyOrders);
+      setisOpenShoppingCart(false)
+      setPreviousOrder(cartProducts);
+      
   }
 
     return (
@@ -64,8 +73,10 @@ function OnCart() {
                 <p className='bg-green-500 text-white font-semibold rounded-lg p-1 mr-6 mt-2'>{`Total Price: $${sumProductCart(shoppingProducts)}`}</p>
               </div>
               <div className='flex justify-center'>
-                <button className='w-64 h-12 mt-5 bg-green-500 rounded-lg font-semibold text-white' 
+                <Link to={'/my-order/last'}>
+                <button className='w-64 h-12 mt-5 bg-green-500 rounded-lg font-semibold text-white' onClick={addToMyOrders} 
                 >CheckOut</button>
+                </Link>
               </div>
             </div>
        </aside>
