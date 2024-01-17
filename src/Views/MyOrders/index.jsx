@@ -7,7 +7,8 @@ import MyOrdersCont from "../../Components/MyOrdersCont"
 function MyOrders() {
   const {
     myOrders,
-    setMyOrders,
+    previousOrder,
+    setPreviousOrder,
   } = React.useContext(ProductContext);
 
   return (
@@ -15,7 +16,7 @@ function MyOrders() {
     <Navbar/>
       <Layout>
         <p className="font-semibold text-lg">My Orders</p>
-        <MyOrdersCont myOrders={myOrders}/>
+        <MyOrdersCont myOrders={myOrders} previousOrder={previousOrder} setPreviousOrder={setPreviousOrder}/>
       </Layout>
     </>
   )

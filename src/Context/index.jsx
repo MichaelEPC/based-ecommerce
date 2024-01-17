@@ -31,8 +31,12 @@ function ProductProvider({children}) {
     // Array an ID for Products Orders : Nake an state to provide ID to objects Orders that been added to the Orders section
     const [myOrdersId, setMyOrdersId ] = React.useState(0);
 
+    // Search Products : Search products with an input value
+    const [SearchProducts, setSearchProducts ] = React.useState('');
+
     CallForProducts(setProductCard);
-    
+
+    console.log(myOrders);
     return (
         <ProductContext.Provider value={{
             setProductCard,
@@ -54,6 +58,8 @@ function ProductProvider({children}) {
             setPreviousOrder,
             myOrdersId,
             setMyOrdersId,
+            SearchProducts,
+            setSearchProducts,
         }}>
             {children}
         </ProductContext.Provider>
