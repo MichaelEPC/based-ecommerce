@@ -1,5 +1,4 @@
 import React from 'react';
-import {sumProductCart, totalProductCart} from '../../../Utils'
 import './style.css'
 
 function MyOrderItem({myOrders}) {
