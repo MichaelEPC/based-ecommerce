@@ -32,7 +32,7 @@ function ProductProvider({children}) {
     const [myOrdersId, setMyOrdersId ] = React.useState(0);
 
     CallForProducts(setProductCard);
-    console.log(myOrders);
+    
     return (
         <ProductContext.Provider value={{
             setProductCard,
