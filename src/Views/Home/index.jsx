@@ -1,14 +1,14 @@
 import React from 'react'
 import Card from '../../Components/Card'
+import { ProductContext } from '../../Context'
 import Layout from '../../Components/Layout'
 import Navbar from '../../Components/Navbar'
-import { ProductContext } from '../../Context'
 import ProductInfo from '../../Components/ProductInfo'
+import NotFoundProduct from '../../Components/NotFoundProduct'
 import './style.css'
 
 function Home() {
   const {
-    productCard,
     setItemNumber,  
     itemNumber,
     setinfoProductOpen,
@@ -18,14 +18,17 @@ function Home() {
     setShoppingProducts,
     shoppingProducts,
     setisOpenShoppingCart,
-    isOpenShoppingCart,
-    SearchProducts,
     setSearchProducts,
+    filterProducts,
+    setCategorySelected,
+    filterProductsByCategory,
   } = React.useContext(ProductContext);
 
   return (
     <>
-    <Navbar itemNumber={itemNumber} setisOpenShoppingCart={setisOpenShoppingCart} setinfoProductOpen={setinfoProductOpen}/>
+    <Navbar itemNumber={itemNumber} setisOpenShoppingCart={setisOpenShoppingCart} setinfoProductOpen={setinfoProductOpen} setCategorySelected={setCategorySelected}
+    filterProductsByCategory={filterProductsByCategory}
+    />
      <Layout>
         <div className='flex-col justify-center items-center  w-96 h-11'>
           <p className='text-xl font-semibold text-center mb-1 '>Find products</p>
@@ -36,7 +39,8 @@ function Home() {
         </div>
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
       {
-        productCard?.map( productCard => (
+        filterProducts.length>0 && <NotFoundProduct/>
+        && filterProducts?.map( productCard => (
           <Card key={productCard.id} data={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}
            setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill} setShoppingProducts={setShoppingProducts}
            shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}

@@ -3,12 +3,11 @@ import NavItems from "./NavItems"
 // Left part of nav
 const left = [
   { name: 'YourStore', to: '/', className: 'font-semibold text-xl text-white mr-2' },
-  { name: 'All', to: '/', className: 'text-white font-normal' },
-  { name: 'Clothes', to: '/clothes', className: 'text-white font-normal' },
-  { name: 'Electronics', to: '/electronics',className: 'text-white font-normal' },
-  { name: 'Furnitures', to: '/furnitures', className: 'text-white font-normal' },
-  { name: 'Toys', to: '/toys', className: 'text-white font-normal' },
-{ name: 'Others', to: '/others', className: 'text-white font-normal' }
+  { name: 'All', to: '/', className: 'text-white font-normal', onClick: 'null' },
+  { name: "men's clothing", to: "/mens-clothing", className: 'text-white font-normal', on: "men's clothing" },
+  { name: "women's clothing", to: "/womens-clothing",className: 'text-white font-normal', on: "women's "},
+  { name: 'jewelery', to: "/jewelery", className: 'text-white font-normal', on: "jewelery" },
+  { name: 'electronics', to: "/electronics", className: 'text-white font-normal', on: "electronics" },
 ]
 
 // Right part of nav
@@ -19,7 +18,7 @@ const right = [
   { name: 'Sign-in', to: '/sing-in', className: 'text-white font-normal' },
 ]
 
-function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen }) {
+function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen, setCategorySelected }) {
 
   // Open Cart View : Open aside cart with products in it
   const openAsideCart = () => {
@@ -30,8 +29,8 @@ function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen }) {
   return (
     <nav className="bg-green-500 flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
       <ul className="flex items-center gap-3 ">
-        {left.map(({name, to, className}) => ( 
-          <NavItems key={ name } className={ className } navbarName={ name } to={ to }/>
+        {left.map(({name, to, className, on}) => ( 
+          <NavItems key={ name } className={ className } navbarName={ name } to={ to } on={on} setCategorySelected={setCategorySelected}/>
         ))}
       </ul>
       <ul className="flex items-center gap-3">

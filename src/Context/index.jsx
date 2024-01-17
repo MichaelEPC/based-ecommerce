@@ -34,9 +34,36 @@ function ProductProvider({children}) {
     // Search Products : Search products with an input value
     const [SearchProducts, setSearchProducts ] = React.useState('');
 
+    // Get Category : Get the category that the user select in the Nav
+    const [categorySelected, setCategorySelected ] = React.useState('');
+
+    // Products Filtred : This array contains the producst filtred by category selected by user
+    const [productsCategory, setproductsCategory ] = React.useState([]);
+
+    const filterProductsByCategory = productCard.filter(
+        product => {
+            if (categorySelected) {
+                const searchCategory = categorySelected.toLocaleLowerCase();
+                const categoryProduct = product.category.toLowerCase();
+                return categoryProduct.includes(searchCategory);
+            }
+            return productCard
+        }
+    )
+
+    const filterProducts = filterProductsByCategory.filter(
+        product => {
+        const searchInput = SearchProducts.toLocaleLowerCase();
+        const nameProduct = product.title.toLowerCase();
+
+        return nameProduct.includes(searchInput);
+        }
+    )
+
+    console.log(categorySelected);
+    console.log(filterProductsByCategory)
     CallForProducts(setProductCard);
 
-    console.log(myOrders);
     return (
         <ProductContext.Provider value={{
             setProductCard,
@@ -60,6 +87,12 @@ function ProductProvider({children}) {
             setMyOrdersId,
             SearchProducts,
             setSearchProducts,
+            filterProducts,
+            categorySelected,
+            setCategorySelected,
+            productsCategory,
+            setproductsCategory,
+            filterProductsByCategory,
         }}>
             {children}
         </ProductContext.Provider>

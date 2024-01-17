@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom"
 
 
-function NavItems ({ className, to, navbarName, activeStyle }) {
+function NavItems ({ className, to, navbarName, activeStyle, on, setCategorySelected}) {
   return (
-    <li className={className}>
+    <li className={className} onClick={() => {
+        setCategorySelected(on);
+    }}>
       <NavLink
         to={to}
         className={
