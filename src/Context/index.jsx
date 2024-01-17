@@ -28,8 +28,11 @@ function ProductProvider({children}) {
     // Array Products Orders : Saves products in an array that been added to the Orders section
     const [myOrders, setMyOrders ] = React.useState([]);
 
-    CallForProducts(setProductCard);
+    // Array an ID for Products Orders : Nake an state to provide ID to objects Orders that been added to the Orders section
+    const [myOrdersId, setMyOrdersId ] = React.useState(0);
 
+    CallForProducts(setProductCard);
+    console.log(myOrders);
     return (
         <ProductContext.Provider value={{
             setProductCard,
@@ -49,6 +52,8 @@ function ProductProvider({children}) {
             setMyOrders,
             previousOrder,
             setPreviousOrder,
+            myOrdersId,
+            setMyOrdersId,
         }}>
             {children}
         </ProductContext.Provider>

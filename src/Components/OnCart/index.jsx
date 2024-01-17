@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import CartItems from './CartItems';
 import { sumProductCart, totalProductCart } from '../../Utils';
 import './style.css'
-import { Link } from 'react-router-dom';
 
 function OnCart({
   setItemNumber,
@@ -15,6 +15,8 @@ function OnCart({
   myOrders,
   setMyOrders,
   setPreviousOrder,
+  myOrdersId,
+  setMyOrdersId,
 } 
 ) {
 
@@ -33,10 +35,14 @@ function OnCart({
       // Get Date
       const today = new Date();
       const day = today.getDate();
-      const month = today.getMonth();
+      const month = today.getMonth()+1;
       const year = today.getFullYear();
+      console.log(month);
+      // Make an unique ID for products
+      setMyOrdersId(myOrdersId + 1);
 
       const MyOrder = {
+        id: myOrdersId,
         date: `${day}/${month}/${year}`,
         products: cartProducts,
         totalprice: sumProductCart(cartProducts),

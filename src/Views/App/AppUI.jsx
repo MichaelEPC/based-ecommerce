@@ -35,6 +35,8 @@ function AppUI() {
     myOrders,
     setMyOrders,
     setPreviousOrder,
+    setMyOrdersId,
+    myOrdersId,
   } = React.useContext(ProductContext);
 
   return (
@@ -45,7 +47,7 @@ function AppUI() {
       setinfoProductOpen={setinfoProductOpen} setShoppingProducts={setShoppingProducts} 
       shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
       isOpenShoppingCart={isOpenShoppingCart} myOrders={myOrders}
-      setMyOrders={setMyOrders} setPreviousOrder={setPreviousOrder}
+      setMyOrders={setMyOrders} setPreviousOrder={setPreviousOrder} setMyOrdersId= {setMyOrdersId} myOrdersId={myOrdersId}
       />
     </BrowserRouter>
     </> 
