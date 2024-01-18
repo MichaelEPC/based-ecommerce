@@ -1,5 +1,6 @@
 import { ProductContext } from "../../Context";
 import InfoFillProduct from "../../Hooks/InfoFillProduct";
+import addTo from '../../imgs/add.sm.png';
 
 function Card({data, setItemNumber, itemNumber, setinfoProductOpen, setProductInfoFill, shoppingProducts, setShoppingProducts, setisOpenShoppingCart}) {
 
@@ -34,7 +35,7 @@ function Card({data, setItemNumber, itemNumber, setinfoProductOpen, setProductIn
       <>
        <div className="bg-gray-100 rounded-lg  cursor-pointer w-52 h-50 mt-12">
         <figure className="relative mb-4 w-full ">
-            <div className="absolute top-0 right-0 flex justify-center items-center bg-white rounded-full w-8 h-8 m-2"><img src="src/imgs/add.sm.png" alt="" 
+            <div className="absolute top-0 right-0 flex justify-center items-center bg-white rounded-full w-8 h-8 m-2"><img src={addTo} alt="" 
             onClick={() => {
                 addToCart(data);
             }}/></div>

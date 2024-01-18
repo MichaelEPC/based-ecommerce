@@ -1,9 +1,10 @@
 import NavItems from "./NavItems"
+import bagCart from '../../imgs/bolso-shopping-cuadrado-con-asa-sm.png';
 
 // Left part of nav
 const left = [
-  { name: 'YourStore', to: '/', className: 'font-semibold text-xl text-white mr-2' },
-  { name: 'All', to: '/', className: 'text-white font-normal', onClick: 'null' },
+  { name: 'YourStore', to: '/based-online-product-store/', className: 'font-semibold text-xl text-white mr-2' },
+  { name: 'All', to: '/based-online-product-store/', className: 'text-white font-normal', onClick: 'null' },
   { name: "men's clothing", to: "/mens-clothing", className: 'text-white font-normal', on: "men's clothing" },
   { name: "women's clothing", to: "/womens-clothing",className: 'text-white font-normal', on: "women's "},
   { name: 'jewelery', to: "/jewelery", className: 'text-white font-normal', on: "jewelery" },
@@ -39,7 +40,7 @@ function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen, setCate
         ))}
         <li>
           <div className="">
-          <img src="src/imgs/bolso-shopping-cuadrado-con-asa-sm.png" alt="" className="cursor-pointer"
+          <img src={bagCart} alt="" className="cursor-pointer"
           onClick={() => openAsideCart()}/>
           <div className="bg-white flex justify-center absolute rounded-full w-3 top-2 right-0">{ itemNumber }</div>
           </div>

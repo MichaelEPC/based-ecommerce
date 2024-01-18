@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductContext } from '../../../Context';
+import xMark from '../../../imgs/boton-x-color-sm.png';
 import './style.css';
 
 function CartItems({ data, setinfoProductOpen, itemNumber, setItemNumber}) {
@@ -31,7 +32,7 @@ function CartItems({ data, setinfoProductOpen, itemNumber, setItemNumber}) {
         <div className='flex justify-between items-center w-72 mt-1'>
             <p className='p-2 font-semibold w-60 rounded-lg ml-5 truncate'>{data.title}</p> 
             <p className='bg-green-500 font-semibold p-2 pr-2 pl-2 text-white rounded-full mr-2'>{`$${data.price}`}</p>
-            <img src="src/imgs/boton-x-color-sm.png" alt="" className='cursor-pointer w-6 mb-12'
+            <img src={xMark} alt="" className='cursor-pointer w-6 mb-12'
             onClick={() => deleteFromCart(data)}/>
         </div>
         </div>
