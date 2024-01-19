@@ -1,3 +1,4 @@
+import xMark from '../../imgs/x-sm.png'
 import './style.css'
 
 function ProductInfo({ setItemNumber, itemNumber, infoProductOpen, setinfoProductOpen, ProductInfoFill, shoppingProducts, setShoppingProducts, setisOpenShoppingCart }) {
@@ -23,7 +24,7 @@ function ProductInfo({ setItemNumber, itemNumber, infoProductOpen, setinfoProduc
             <div className='flex justify-between items-center'>
                 <p className='text-center font-semibold mt-6 ml-2 w-96'>{ProductInfoFill.title}</p>
                 <div className='bg-white rounded-full mt-2'>
-                    <img src="src/imgs/x-sm.png" alt="" className='cursor-pointer w-7'
+                    <img src={xMark} alt="" className='cursor-pointer w-7'
                     onClick={() => setinfoProductOpen(false)}
                     />
                 </div>

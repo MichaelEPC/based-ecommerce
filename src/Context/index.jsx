@@ -40,6 +40,14 @@ function ProductProvider({children}) {
     // Products Filtred : This array contains the producst filtred by category selected by user
     const [productsCategory, setproductsCategory ] = React.useState([]);
 
+    // User Props Context
+
+    // Is User Log : The state veryfi if user is log
+    const [isUserLog, setIsUserLog ] = React.useState(false);
+
+    // Is User Log : The state veryfi if user is log
+    const [userLog, setUserLog ] = React.useState([]);
+
     const filterProductsByCategory = productCard.filter(
         product => {
             if (categorySelected) {
@@ -60,8 +68,6 @@ function ProductProvider({children}) {
         }
     )
 
-    console.log(categorySelected);
-    console.log(filterProductsByCategory)
     CallForProducts(setProductCard);
 
     return (

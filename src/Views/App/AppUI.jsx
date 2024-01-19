@@ -13,16 +13,16 @@ import './App.css'
 const AppRoutes = () => {
   let routes = useRoutes([
     {path: 'based-online-product-store/', element: <Home/>},
-    {path: '/mens-clothing', element: <Home/>},
-    {path: '/womens-clothing', element: <Home/>},
-    {path: '/jewelery', element: <Home/>},
-    {path: '/electronics', element: <Home/>},
-    {path: '/my-account', element: <MyAccount/>},
-    {path: '/my-order', element: <MyOrder/>},
-    {path: '/my-order/last', element: <MyOrder/>},
-    {path: '/my-orders', element: <MyOrders/>},
-    {path: '/my-order/:id', element: <MyOrder/>},
-    {path: '/sing-in', element: <SignIn/>},
+    {path: 'based-online-product-store/mens-clothing', element: <Home/>},
+    {path: 'based-online-product-store/womens-clothing', element: <Home/>},
+    {path: 'based-online-product-store/jewelery', element: <Home/>},
+    {path: 'based-online-product-store/electronics', element: <Home/>},
+    {path: 'based-online-product-store/my-account', element: <MyAccount/>},
+    {path: 'based-online-product-store/my-order', element: <MyOrder/>},
+    {path: 'based-online-product-store/my-order/last', element: <MyOrder/>},
+    {path: 'based-online-product-store/my-orders', element: <MyOrders/>},
+    {path: 'based-online-product-store/my-order/:id', element: <MyOrder/>},
+    {path: 'based-online-product-store/sing-in', element: <SignIn/>},
     {path: '/*', element: <NotFound/>},
   ])
   return routes

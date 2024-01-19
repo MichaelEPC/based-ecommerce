@@ -5,18 +5,18 @@ import bagCart from '../../imgs/bolso-shopping-cuadrado-con-asa-sm.png';
 const left = [
   { name: 'YourStore', to: '/based-online-product-store/', className: 'font-semibold text-xl text-white mr-2' },
   { name: 'All', to: '/based-online-product-store/', className: 'text-white font-normal', onClick: 'null' },
-  { name: "men's clothing", to: "/mens-clothing", className: 'text-white font-normal', on: "men's clothing" },
-  { name: "women's clothing", to: "/womens-clothing",className: 'text-white font-normal', on: "women's "},
-  { name: 'jewelery', to: "/jewelery", className: 'text-white font-normal', on: "jewelery" },
-  { name: 'electronics', to: "/electronics", className: 'text-white font-normal', on: "electronics" },
+  { name: "men's clothing", to: "/based-online-product-store/mens-clothing", className: 'text-white font-normal', on: "men's clothing" },
+  { name: "women's clothing", to: "/based-online-product-store/womens-clothing",className: 'text-white font-normal', on: "women's "},
+  { name: 'jewelery', to: "/based-online-product-store/jewelery", className: 'text-white font-normal', on: "jewelery" },
+  { name: 'electronics', to: "/based-online-product-store/electronics", className: 'text-white font-normal', on: "electronics" },
 ]
 
 // Right part of nav
 const right = [
   { name: 'user@gmail.com', className: 'text-gray-200 cursor-none' },
-  { name: 'My Orders', to: '/my-orders', className: 'text-white font-normal' },
-  { name: 'My Account', to: '/my-account', className: 'text-white font-normal' },
-  { name: 'Sign-in', to: '/sing-in', className: 'text-white font-normal' },
+  { name: 'My Orders', to: '/based-online-product-store/my-orders', className: 'text-white font-normal' },
+  { name: 'My Account', to: '/based-online-product-store/my-account', className: 'text-white font-normal' },
+  { name: 'Sign-in', to: '/based-online-product-store/sing-in', className: 'text-white font-normal' },
 ]
 
 function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen, setCategorySelected }) {
