@@ -28,7 +28,7 @@ function SignUpCont({users, setUsers, userID, setUserID}) {
     const parseCopyOfUser = JSON.stringify(copyOfUser);
     setUsers(parseCopyOfUser);
 
-    window.location.href = '/based-online-product-store/sing-in';
+    window.location.href = '/based-online-product-store/';
 };
 
   return (
