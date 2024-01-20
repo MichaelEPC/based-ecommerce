@@ -79,7 +79,7 @@ function OnCart({
                 <p className='bg-green-500 text-white font-semibold rounded-lg p-1 mr-6 mt-2'>{`Total Price: $${sumProductCart(shoppingProducts)}`}</p>
               </div>
               <div className='flex justify-center'>
-                <Link to={'/my-order/last'}>
+                <Link to={'/based-online-product-store/my-order/last'}>
                 <button className='w-64 h-12 mt-5 bg-green-500 rounded-lg font-semibold text-white' onClick={addToMyOrders} 
                 >CheckOut</button>
                 </Link>

@@ -8,21 +8,24 @@ import MyOrders from '../MyOrders'
 import NotFound from '../NotFound'
 import SignIn from '../SignIn'
 import OnCart from '../../Components/OnCart'
+import SingUp from '../SingUp'
 import './App.css'
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    {path: 'based-online-product-store/', element: <Home/>},
-    {path: 'based-online-product-store/mens-clothing', element: <Home/>},
-    {path: 'based-online-product-store/womens-clothing', element: <Home/>},
-    {path: 'based-online-product-store/jewelery', element: <Home/>},
-    {path: 'based-online-product-store/electronics', element: <Home/>},
+    {path: 'based-online-product-store/', element: <SignIn/>},
+    {path: 'based-online-product-store/home', element: <Home/>},
+    {path: 'based-online-product-store/home/mens-clothing', element: <Home/>},
+    {path: 'based-online-product-store/home/womens-clothing', element: <Home/>},
+    {path: 'based-online-product-store/home/jewelery', element: <Home/>},
+    {path: 'based-online-product-store/home/electronics', element: <Home/>},
     {path: 'based-online-product-store/my-account', element: <MyAccount/>},
     {path: 'based-online-product-store/my-order', element: <MyOrder/>},
     {path: 'based-online-product-store/my-order/last', element: <MyOrder/>},
     {path: 'based-online-product-store/my-orders', element: <MyOrders/>},
     {path: 'based-online-product-store/my-order/:id', element: <MyOrder/>},
     {path: 'based-online-product-store/sing-in', element: <SignIn/>},
+    {path: 'based-online-product-store/sing-up', element: <SingUp/>},
     {path: '/*', element: <NotFound/>},
   ])
   return routes

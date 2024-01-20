@@ -1,9 +1,19 @@
 import React from "react";
 import CallForProducts from "../Hooks/CallForProducts";
+import { LocalStorageUser } from "./LocalStorageUser";
+import { LocalStorageLogIn } from "./LocalStorageLogIn";
+import { updateNav } from "../Utils/index.mjs";
+import { LocalStorageConcurrenUser } from "./LocalStorageCurrentUser";
+import { LocalStorageUniqueUserId } from "./LocalStorageUniqueIdUser";
 
 const ProductContext = React.createContext();
-
 function ProductProvider({children}) {
+    // Options Nav : The navbar will update if the user doesnt have an account
+    const [leftNav, setLeftNav] = React.useState([]);
+
+    // Options Nav : The navbar will update if the user doesnt have an account
+    const [leftRight, setRightNav] = React.useState([]);
+
     // Product Array : Get information products / API
     const [productCard, setProductCard] = React.useState([]);
 
@@ -42,11 +52,18 @@ function ProductProvider({children}) {
 
     // User Props Context
 
-    // Is User Log : The state veryfi if user is log
-    const [isUserLog, setIsUserLog ] = React.useState(false);
+    // User registered : The state keeps the users that had been already created account
+    const {users, updateUsers: setUsers} = LocalStorageUser();
 
     // Is User Log : The state veryfi if user is log
-    const [userLog, setUserLog ] = React.useState([]);
+    const { isUserSingIn, updateIsUserSingIn : setIsUserSingIn } = LocalStorageLogIn();
+
+    // Info User On : This states saves the information of the user that its on in his account
+    const { currentUser, updateCurrenUser : setCurrentUser } = LocalStorageConcurrenUser();
+
+    // User ID : Makes an unique ID for every user
+    const {userID, updateUniqueId : setUserID } = LocalStorageUniqueUserId();
+
 
     const filterProductsByCategory = productCard.filter(
         product => {
@@ -63,13 +80,15 @@ function ProductProvider({children}) {
         product => {
         const searchInput = SearchProducts.toLocaleLowerCase();
         const nameProduct = product.title.toLowerCase();
-
         return nameProduct.includes(searchInput);
         }
     )
 
+    console.log(users);
     CallForProducts(setProductCard);
 
+    updateNav(isUserSingIn, setLeftNav, setRightNav, currentUser);
+    
     return (
         <ProductContext.Provider value={{
             setProductCard,
@@ -99,6 +118,16 @@ function ProductProvider({children}) {
             productsCategory,
             setproductsCategory,
             filterProductsByCategory,
+            isUserSingIn,
+            setIsUserSingIn,
+            users,
+            setUsers,
+            userID,
+            setUserID,
+            leftNav,
+            leftRight,
+            currentUser,
+            setCurrentUser,
         }}>
             {children}
         </ProductContext.Provider>

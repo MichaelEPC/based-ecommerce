@@ -22,12 +22,16 @@ function Home() {
     filterProducts,
     setCategorySelected,
     filterProductsByCategory,
+    isUserSingIn,
+    leftNav,
+    leftRight,
+    currentUser,
   } = React.useContext(ProductContext);
 
   return (
     <>
     <Navbar itemNumber={itemNumber} setisOpenShoppingCart={setisOpenShoppingCart} setinfoProductOpen={setinfoProductOpen} setCategorySelected={setCategorySelected}
-    filterProductsByCategory={filterProductsByCategory}
+    filterProductsByCategory={filterProductsByCategory} isUserSingIn={isUserSingIn} leftNav={leftNav} leftRight={leftRight}
     />
      <Layout>
         <div className='flex-col justify-center items-center  w-96 h-11'>
