@@ -1,6 +1,6 @@
-.signup-cont {
-    width: 450px;
-    height: 700px;
+.signup-container {
+    width: 45rem;
+    height: 80rem;
     /* From https://css.glass */
     background: rgba(218, 203, 203, 0.28);
     border-radius: 16px;
@@ -10,6 +10,47 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.input-sign-e {
-    border: 2px solid rgb(0, 0, 0);
+.sign-in-form {
+    width: 80%;
+}
+
+.sign-in-title {
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: green;
+}
+
+.input-sign-in-text {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.form-input-sing-in {
+    border: 2px solid rgb(148, 148, 148);
+    width: 32rem;
+    height: 3.5rem;
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.div-sign-in-button {
+    margin-top: 5rem;
+}
+
+.underlined {
+    position: relative;
+}
+    
+.underline-clip:after {
+    content: '';
+    position: absolute;
+    top: 95%;
+    width: 150%;
+    aspect-ratio: 3 / 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 50%;
+    border: 6px solid hsl(130 80% 50%);
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
 }

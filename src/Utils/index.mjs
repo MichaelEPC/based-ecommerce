@@ -16,7 +16,7 @@ const totalProductCart = (shoppingProducts) => {
     return amountProducts;
 }   
 
-// Update Nav : Makes the nav diferent if the user its have account or not
+// Update Nav : Makes the nav diferent if the user have an account log in or not
 const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
     React.useEffect(() => {
         setTimeout(() => {

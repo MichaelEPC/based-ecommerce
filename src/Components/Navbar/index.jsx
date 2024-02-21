@@ -2,6 +2,7 @@ import React from "react";
 import { updateNav } from "../../Utils/index.mjs";
 import NavItems from "./NavItems"
 import bagCart from '../../imgs/bolso-shopping-cuadrado-con-asa-sm.png';
+import './style.css'
 
 function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen, setCategorySelected, leftNav, leftRight }) {
   
@@ -12,7 +13,7 @@ function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen, setCate
   }
   
   return (
-    <nav className="bg-green-500 flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
+    <nav className="navbar bg-green-500 flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
       <ul className="flex items-center gap-3 ">
         {leftNav.map(({name, to, className, on}) => ( 
           <NavItems key={ name } className={ className } navbarName={ name } to={ to } on={on} setCategorySelected={setCategorySelected}/>

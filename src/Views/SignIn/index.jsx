@@ -22,9 +22,6 @@ function SignIn() {
 
   return (
     <>
-    <Navbar itemNumber={itemNumber} setisOpenShoppingCart={setisOpenShoppingCart} setinfoProductOpen={setinfoProductOpen} setCategorySelected={setCategorySelected}
-      filterProductsByCategory={filterProductsByCategory} isUserSingIn={isUserSingIn} leftNav={leftNav} leftRight={leftRight}
-    />
     <Layout>
       <SignInCont users={users} setIsUserSingIn={setIsUserSingIn} setCurrentUser={setCurrentUser}/>
     </Layout>

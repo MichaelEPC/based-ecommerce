@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css'
+import storeIcon from '../../imgs/storeIcon.png';
 
 
 function SignInCont({users, setIsUserSingIn, setCurrentUser}) {
@@ -19,43 +20,54 @@ function SignInCont({users, setIsUserSingIn, setCurrentUser}) {
           setCurrentUser(user)
           setIsUserSingIn(true);
         }
-      } else {
-
-      }
+      } 
     }
-};
+}
 
   return (
     <>
     <div className='flex flex-col justify-center items-center w-full h-full'>
-    <div className='sign-cont flex flex-col items-center mt-4 rounded-lg'>
-    <p className='font-semibold text-2xl mt-2 alig  '>Sign in</p>
-      <form action="" onSubmit={handleSubmit}>
-        <div className='flex mt-10'>
-            <p className='font-semibold text-lg mr-10 mt-2 cursor-default'>Email:</p>
-            <input type="text" name='email' placeholder='' className='email-input-singin input-sign-e w-72 h-10 rounded-lg p-2 focus:outline-green-500'/>
-        </div>
+      <div className='main-container'>
 
-        <div className='flex mt-10'>
-            <p className='font-semibold text-left text-lg mr-3 mt-2 cursor-default'>Password:</p>
-            <input type="password" name='password' placeholder='' className='password-input-singin input-sign-e w-72 h-10 rounded-lg p-2 focus:outline-green-500'
-            required
-            />
-        </div>
-        
-        <div className='flex flex-col justify-center items-center h-32'>
-          <p className='mt-5 cursor-pointer text-green-500 underline'>¿Forgot password?</p>
-          <button type='submit' className='sign-button rounded-lg font-semibold text-white bg-green-500 w-80 h-44 mt-5'>Sign in</button>
-        </div>
-      </form>
-        
-        <div className='flex flex-col justify-center items-center mt-32'>
-          <p className='mt-5 cursor-pointer text-green-500 underline'>Create your account</p>
-          <Link to={'/based-online-product-store/sing-up'}>
-          <button className='sign-button rounded-lg font-semibold text-white bg-green-500 w-80 h-14 mt-2'>Sing Up</button>
+      <div className='flex flex-col items-center'>
+        <div className='div-icon rounded-full w-48'>
+          <Link to={'/based-online-product-store/home'}>
+            <img className='store-icon' src={storeIcon} alt="icon" />
           </Link>
         </div>
-    </div>
+      </div>
+
+      <div className='flex flex-col items-center'>
+        <div className='input-container flex flex-col items-center rounded-lg'>
+        <p className='sing-up-title font-semibold'>Sign in</p>
+          <form action="" onSubmit={handleSubmit}>
+            <div className=' mt-10'>
+                <p className='info-text font-semibold mt-1 cursor-default'>Email:</p>
+                <input type="email" name='email' placeholder='' className='form-input rounded-lg focus:outline-green-500' required/>
+            </div>
+
+            <div className='mt-10'>
+                <p className='info-text font-semibold  cursor-default'>Password:</p>
+                <input type="password" name='password' placeholder='*********' className='form-input rounded-lg p-2 focus:outline-green-500'
+                required/>
+            </div>
+
+            <div className='flex flex-col justify-center items-center mb-12'>
+              <p className='forgot-text cursor-pointer text-green-500 underline'>¿Forgot password?</p>
+              <button type='submit' className='sign-button rounded-lg font-semibold text-white bg-green-500'>Continue</button>
+            </div>
+          </form>
+          
+      </div>
+
+      </div>
+
+      <div className='flex flex-col items-center'>
+        <Link to={'/based-online-product-store/sing-up'}>
+          <a className='createAccount-text rounded-lg font-semibold text-green-500 bg-transparent' href="">Create new account</a>
+        </Link>
+        </div>
+      </div>
     </div>
     </>
   )

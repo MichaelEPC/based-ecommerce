@@ -84,7 +84,6 @@ function ProductProvider({children}) {
         }
     )
 
-    console.log(users);
     CallForProducts(setProductCard);
 
     updateNav(isUserSingIn, setLeftNav, setRightNav, currentUser);
