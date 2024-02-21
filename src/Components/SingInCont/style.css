@@ -64,7 +64,7 @@ form {
 }
 
 .form-input {
-    border: 2px solid rgb(148, 148, 148);
+    border: 0.2rem solid rgb(148, 148, 148);
     width: 32rem;
     height: 4rem;
     font-size: 1.3rem;

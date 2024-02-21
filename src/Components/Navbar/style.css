@@ -7,3 +7,26 @@
 .navbar {
     height: 7rem;
 }
+
+.div-icon-nav {
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    margin-right: 1rem;
+}
+
+.store-icon-nav {
+    height: 5rem;
+}
+
+.text-gray {
+    color: rgb(131, 133, 131);
+}

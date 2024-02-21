@@ -1,11 +1,11 @@
-import React from 'react'
-import Card from '../../Components/Card'
-import { ProductContext } from '../../Context'
-import Layout from '../../Components/Layout'
-import Navbar from '../../Components/Navbar'
-import ProductInfo from '../../Components/ProductInfo'
-import NotFoundProduct from '../../Components/NotFoundProduct'
-import './style.css'
+import React from 'react';
+import Card from '../../Components/Card';
+import { ProductContext } from '../../Context';
+import Layout from '../../Components/Layout';
+import Navbar from '../../Components/Navbar';
+import ProductInfo from '../../Components/ProductInfo';
+import NotFoundProduct from '../../Components/NotFoundProduct';
+import './style.css';
 
 function Home() {
   const {
@@ -34,16 +34,16 @@ function Home() {
     filterProductsByCategory={filterProductsByCategory} isUserSingIn={isUserSingIn} leftNav={leftNav} leftRight={leftRight}
     />
      <Layout>
-        <div className='flex-col justify-center items-center  w-96 h-11'>
-          <p className='text-xl font-semibold text-center mb-1 '>Find products</p>
-          <input type="text" placeholder='"Shirt" "Laptop" "Clothes"' className='input-search-products h-10 w-full pl-2 font-light focus:outline-green-500' 
+        <div className='div-search-input flex-col justify-center items-center'>
+          <p className='font-semibold text-center mb-1 '>Find products</p>
+          <input type="text" placeholder='"Shirt" "Laptop" "Clothes"' className='input-search-products pl-2 font-light focus:outline-green-500' 
           onChange={(event) => {
             setSearchProducts(event.target.value);
           }}/>
         </div>
       <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
       {
-        filterProducts.length>0 && <NotFoundProduct/>
+        filterProducts.length > 0 && <NotFoundProduct/>
         && filterProducts?.map( productCard => (
           <Card key={productCard.id} data={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}
            setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill} setShoppingProducts={setShoppingProducts}

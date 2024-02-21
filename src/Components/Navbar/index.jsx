@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { updateNav } from "../../Utils/index.mjs";
 import NavItems from "./NavItems"
-import bagCart from '../../imgs/bolso-shopping-cuadrado-con-asa-sm.png';
 import './style.css'
+import bagCart from '../../imgs/bolso-shopping-cuadrado-con-asa-sm.png';
+import storeIcon from '../../imgs/storeIcon.png'; 
 
 function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen, setCategorySelected, leftNav, leftRight }) {
   
@@ -14,7 +16,13 @@ function Navbar({ itemNumber, setisOpenShoppingCart, setinfoProductOpen, setCate
   
   return (
     <nav className="navbar bg-green-500 flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
+      
       <ul className="flex items-center gap-3 ">
+        <div className='div-icon-nav rounded-full'>
+          <Link to={'/based-online-product-store/home'}>
+            <img className='store-icon-nav' src={storeIcon} alt="icon" />
+          </Link>
+        </div>
         {leftNav.map(({name, to, className, on}) => ( 
           <NavItems key={ name } className={ className } navbarName={ name } to={ to } on={on} setCategorySelected={setCategorySelected}/>
         ))}

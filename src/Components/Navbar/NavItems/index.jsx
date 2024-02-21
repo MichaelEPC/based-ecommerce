@@ -9,7 +9,6 @@ function NavItems ({ className, to, navbarName, activeStyle, on, setCategorySele
       <NavLink to={to} className={
           ({ isActive }) => (isActive ? activeStyle : undefined)
         }>
-
         <p className="nav-items-text">{navbarName}</p>
       </NavLink>
     </li>

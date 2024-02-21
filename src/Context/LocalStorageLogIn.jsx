@@ -29,7 +29,7 @@ function LocalStorageLogIn() {
                     
                 }
             }
-        }, 2000);
+        }, 1);
     })
 
     const updateIsUserSingIn = (userActive) => {
