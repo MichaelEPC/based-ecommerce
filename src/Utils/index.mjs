@@ -54,7 +54,7 @@ const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
             } if ( isUserSingIn == null) {
                 return;
             }  
-        }, 1);
+        }, 2000);
     })
 }
 

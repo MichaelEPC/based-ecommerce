@@ -1,8 +1,53 @@
-
 .product-info{
-    width: 390px;
+    width: 39rem;
     height: 100vh;
     top: 68px;
     border-left: 1px solid black;
 }
 
+.product-info-title{
+    font-size: 2rem;
+}
+
+.div-product-info-xmark {
+    height: 2rem;
+    width: 2rem;
+    margin-top: 2rem;
+}
+
+.product-info-image {
+    height: 38rem;
+    width: 36rem;
+}
+
+.div-product-info-price-category {
+    width: 70%;
+}
+
+.div-product-info-price-in {
+    height: auto;
+    width: 100%;
+}
+
+.div-product-info-price-in {
+    width: auto;
+    font-size: 1.5rem;
+}
+
+.div-description {
+    height: auto;
+    width: 20rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.div-description p {
+    font-size: 1.4rem;
+    max-height: 20rem;
+}
+
+.add-to-cart-button {
+    height: 7rem;
+    width: 28rem;
+    font-size: 1.4rem;
+}

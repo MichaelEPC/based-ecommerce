@@ -21,28 +21,32 @@ function ProductInfo({ setItemNumber, itemNumber, infoProductOpen, setinfoProduc
     return (
       <>
        <aside className={`${infoProductOpen ? 'product-info fixed bg-gray-100 border-black right-0' : 'hidden'}`}>
-            <div className='flex justify-between items-center'>
-                <p className='text-center font-semibold mt-6 ml-2 w-96'>{ProductInfoFill.title}</p>
-                <div className='bg-white rounded-full mt-2'>
-                    <img src={xMark} alt="" className='cursor-pointer w-7'
-                    onClick={() => setinfoProductOpen(false)}
-                    />
-                </div>
+        
+       <div className='flex justify-end items-end'>
+            <div className='div-product-info-xmark rounded-full'>
+                <img src={xMark} alt="" className='cursor-pointer w-7'
+                onClick={() => setinfoProductOpen(false)}
+                />
             </div>
-            <div className='flex justify-center items-center flex-col'>
-                <img src={ProductInfoFill.image} alt="product-image" className='w-96 h-96 object-cover mt-10'/>
-                <div className='flex justify-between items-center w-72 mt-1'>
-                <p className='bg-green-500 p-2 font-semibold w-28 rounded-lg text-white'>{ProductInfoFill.category}</p> 
-                <p className='bg-green-500 font-semibold p-2 pr-2 pl-2 text-white rounded-full'>{`$${ProductInfoFill.price}`}</p>
-                </div>
+        </div>
+        
+       <div className='flex flex-col justify-between items-center mt-5'>
+            <p className='product-info-title text-center font-semibold mt-6 ml-2'>{ProductInfoFill.title}</p>
+        </div>
+
+        <div className='flex justify-center items-center flex-col'>
+            <img src={ProductInfoFill.image} alt="product-image" className='product-info-image object-cover mt-10'/>
+            <div className='div-product-info-price-category flex justify-between items-center mt-1'>
                 <div className='div-description'>
-                    <p className='w-80 h-44 mt-4 mb-4 overflow-auto'>{ProductInfoFill.description}</p>
+                <p className='overflow-auto'>{ProductInfoFill.description}</p>
                 </div>
-                <button className='bg-green-500 text-white font-semibold w-80 h-20'
-                onClick={() => {
-                    addToCart(ProductInfoFill);
-                }}>Add to Cart ⚡</button>                
+                <p className='div-product-info-price-in bg-green-500 font-semibold rounded-full p-2 pr-2 pl-2 text-white'>{`$${ProductInfoFill.price}`}</p>
             </div>
+            <button className='add-to-cart-button bg-green-500 text-white font-semibold'
+            onClick={() => {
+                addToCart(ProductInfoFill);
+            }}>Add to Cart ⚡</button>                
+        </div>
        </aside>
       </>
     )
