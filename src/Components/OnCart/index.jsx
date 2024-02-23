@@ -60,7 +60,7 @@ function OnCart({
 
     return (
       <>
-       <aside className={`${isOpenShoppingCart ? 'card-box fixed bg-gray-100 border-black right-4' : 'hidden'}`}>
+       <aside className={`${isOpenShoppingCart ? 'aside-cart fixed bg-gray-100 border-black right-4' : 'hidden'}`}>
 
         <div className='flex justify-end'>
           <img src={xMark} alt="" className='xmark-icon cursor-pointer'
