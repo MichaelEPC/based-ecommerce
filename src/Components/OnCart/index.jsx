@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CartItems from './CartItems';
 import { sumProductCart, totalProductCart } from '../../Utils';
 import './style.css'
+import xMark from '../../imgs/x-sm.png';
 
 function OnCart({
   setItemNumber,
@@ -60,31 +61,40 @@ function OnCart({
     return (
       <>
        <aside className={`${isOpenShoppingCart ? 'card-box fixed bg-gray-100 border-black right-4' : 'hidden'}`}>
-            <div className='flex justify-between items-center'>
-                <p className='text-center font-semibold mt-6 w-full font text-lg underline'>My Cart</p>
-                <img src="src/imgs/x-sm.png" alt="" className='absolute cursor-pointer w-5 right-2 '
-                onClick={() => setisOpenShoppingCart(false)}/>
+
+        <div className='flex justify-end'>
+          <img src={xMark} alt="" className='xmark-icon cursor-pointer'
+          onClick={() => setisOpenShoppingCart(false)}/>
+        </div>
+
+        <div className='flex flex-col justify-between items-center'>
+            <p className='title-my-cart underlined underline-clip font-semibold'>My Cart</p>
+        </div>
+        <div className='products-container flex flex-col overflow-x-hidden overflow-y-auto'>
+        {
+        shoppingProducts?.map(shoppingProducts => (
+        <CartItems 
+        key={shoppingProducts.id} data={shoppingProducts} setinfoProductOpen={setinfoProductOpen} 
+        itemNumber={itemNumber} setItemNumber={setItemNumber}
+        />))}
+        </div>
+
+        <div className='info-div-cart'>
+
+          <div className='info-cart-container'>
+            <div className='flex justify-between'>
+              <p className='font-semibold p-1 ml-4 mt-2 underline'>{`Products: ${totalProductCart(shoppingProducts)}`}</p>
+              <p className='bg-green-500 text-white font-semibold rounded-lg p-1 mr-6 mt-2'>{`Total Price: $${sumProductCart(shoppingProducts)}`}</p>
             </div>
-            <div className='products-container flex flex-col overflow-auto'>
-            {
-            shoppingProducts?.map(shoppingProducts => (
-            <CartItems 
-            key={shoppingProducts.id} data={shoppingProducts} setinfoProductOpen={setinfoProductOpen} 
-            itemNumber={itemNumber} setItemNumber={setItemNumber}
-            />))}
+
+            <div className='flex justify-center'>
+              <Link to={'/based-online-product-store/my-order/last'}>
+              <button className='mt-5 bg-green-500 rounded-lg font-semibold text-white' onClick={addToMyOrders} 
+              >CheckOut</button>
+              </Link>
             </div>
-            <div className='info-cart-container'>
-              <div className='flex justify-between'>
-                <p className='font-semibold p-1 ml-4 mt-2 underline'>{`Products: ${totalProductCart(shoppingProducts)}`}</p>
-                <p className='bg-green-500 text-white font-semibold rounded-lg p-1 mr-6 mt-2'>{`Total Price: $${sumProductCart(shoppingProducts)}`}</p>
-              </div>
-              <div className='flex justify-center'>
-                <Link to={'/based-online-product-store/my-order/last'}>
-                <button className='w-64 h-12 mt-5 bg-green-500 rounded-lg font-semibold text-white' onClick={addToMyOrders} 
-                >CheckOut</button>
-                </Link>
-              </div>
-            </div>
+        </div>
+        </div>
        </aside>
       </>
     )

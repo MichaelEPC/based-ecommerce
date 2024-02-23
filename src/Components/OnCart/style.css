@@ -1,3 +1,18 @@
+.xmark-icon {
+    margin-top: 2rem;
+    margin-right: 0.5rem;
+}
+
+.title-my-cart {
+    height: auto;
+    width: auto;
+    background: rgba(255, 255, 255, 0.53);
+    border-radius: 16px;
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+}
 
 .card-box{
     width: 370px;
@@ -12,6 +27,22 @@
     height: 500px;
 }
 
-.info-cart-container {
-    
+.info-div-cart {
+    height: auto;
+    width: 36rem;
+    background: rgba(255, 255, 255, 0.53);
+    border-radius: 16px;
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+    margin-bottom: 2rem;
+}
+
+.info-div-cart div p {
+    font-size: 1.8rem;
+}
+
+.info-div-cart div button {
+    height: 4rem;
+    width: 22rem;
+    font-size: 1.5rem;
 }

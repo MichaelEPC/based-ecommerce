@@ -1,4 +1,33 @@
 .cart-items {
-    width: 350px;
-    height: 80px;
+    width: 35rem;
+    height: 8rem;
+}
+
+.image-product-cart {
+    height: 5rem; 
+    width: 5rem;
+    /* 5 */
+}
+
+.name-product-cart {
+    font-size: 1.2rem;
+    height: auto;
+    width: 16rem ;
+}
+
+.price-product-cart {
+    height: auto;
+    width: 5rem;
+    max-width: 5rem ;
+}
+
+.price-product-cart p {
+    height: auto;
+    width: auto;
+    font-size: 1.3rem;
+}
+
+.xmark-cart {
+    height: 2rem;
+    width: 2rem;
 }
