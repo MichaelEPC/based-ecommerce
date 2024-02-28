@@ -33,7 +33,7 @@ const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
                 const right = [
                 { name: currentUser.email, className: 'text-gray cursor-none' },
                 { name: 'My Orders', to: '/based-online-product-store/my-orders', className: 'text-white font-normal' },
-                { name: 'My Account', to: '/based-online-product-store/my-account', className: 'text-white font-normal' },
+                { name: 'Account', to: '/based-online-product-store/my-account', className: 'text-white font-normal' },
                 ]
                 setLeftNav(left);
                 setRightNav(right);

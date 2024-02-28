@@ -1,9 +1,45 @@
 .my-order-container {
-    width: 520px;
-    height: 60vh;
+    width: 52rem;
+    height: auto;
+}
+
+.title-my-order {
+    font-size: 2rem;
+    font-family: sans-serif
 }
 
 .my-order-products-container {
-    height: 600px;
+    height: 60rem;
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.1);
 }
 
+.info-div-my-order {
+    height: 4rem;
+    width: 30rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.46);
+    border-radius: 1.6rem;
+    box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+    border: 1px solid rgba(255, 255, 255, 0.81);
+}
+
+.info-div-my-order p {
+    height: auto;
+    width: auto;
+    font-size: 1.5rem;
+}
+
+.a-my-order {
+    font-size: 1.2rem;
+    color: rgb(34, 197, 94);
+    margin-top: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.a-my-order:hover {
+    color: rgb(196, 85, 0);
+}

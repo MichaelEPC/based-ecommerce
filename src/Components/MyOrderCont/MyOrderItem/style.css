@@ -1,0 +1,22 @@
+.my-order-items {
+    height: 4rem;
+}
+
+.my-order-items img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.my-order-items p:nth-child(2) {
+    height: 2.5rem;
+    width: auto;
+    max-width: 20rem;
+    font-size: 1.2rem;
+}
+
+.my-order-items p:nth-child(3) {
+    height: 2.5rem;
+    width: auto;
+    font-size: 1.2rem;
+}
+
