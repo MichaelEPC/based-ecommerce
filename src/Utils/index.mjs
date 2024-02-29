@@ -2,12 +2,22 @@ import React from "react";
 
 //  Add Products Price Cart : Show total Price Of Products On the Shopping Cart 
 const sumProductCart = (shoppingProducts) => {
-    let totaPrice = 0;
+    let totalPrice = 0;
     for (let i = 0; i < shoppingProducts.length; i++) {
-        totaPrice = shoppingProducts[i].price + totaPrice;
+        totalPrice = shoppingProducts[i].price + totalPrice;
     }
-    totaPrice = totaPrice.toFixed(2);
-    return totaPrice;
+    totalPrice = totalPrice.toFixed(2);
+    return totalPrice;
+}
+
+//  Add all orders total Price : Show total Price Of all the orders that have been added  
+const sumTotalPriceOrder = (MyOrders) => {
+    let totalPrice = 0;
+    for (const iterator of MyOrders) {
+        totalPrice =+ iterator.price + totalPrice;
+    }
+    totalPrice = totalPrice.toFixed(2);
+    return totalPrice;
 }
 
 //  Total Products On Cart : Show total Products On the Shopping Cart 
@@ -59,4 +69,4 @@ const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
 }
 
 
-export {sumProductCart, totalProductCart, updateNav}
+export {sumProductCart, totalProductCart, sumTotalPriceOrder, updateNav}

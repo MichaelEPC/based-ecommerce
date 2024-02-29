@@ -2,3 +2,7 @@
     width: 480px;
     height: 70px;
 }
+
+.my-orders-item-container p {
+    font-size: 1.2rem;
+}

@@ -38,7 +38,6 @@ function OnCart({
       const day = today.getDate();
       const month = today.getMonth()+1;
       const year = today.getFullYear();
-      console.log(month);
       // Make an unique ID for products
       setMyOrdersId(myOrdersId + 1);
 
@@ -46,7 +45,7 @@ function OnCart({
         id: myOrdersId,
         date: `${day}/${month}/${year}`,
         products: cartProducts,
-        totalprice: sumProductCart(cartProducts),
+        price: sumProductCart(cartProducts),
         totalproducts: cartProducts.length,
       }
       const listMyOrders = myOrders;

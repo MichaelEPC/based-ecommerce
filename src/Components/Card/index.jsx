@@ -53,7 +53,7 @@ function Card({data, setItemNumber, itemNumber, setinfoProductOpen, setProductIn
 
         </figure>
 
-        <div className="flex justify-between w-full h-full">
+        <div className="div-product-card-price-title flex justify-between">
             <span className="product-name-card ml-2 truncate">{data.title}</span>
             <span className="price-name-card font-semibold pr-2 pl-1">{`$${data.price}`}</span>
         </div>

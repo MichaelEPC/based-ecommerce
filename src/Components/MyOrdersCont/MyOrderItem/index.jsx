@@ -11,7 +11,7 @@ function MyOrderItem({myOrders}) {
             <div className='flex justify-between items-center'>
 
                 <div className='flex items-center mt-5'>
-                <p className='font-semibold underline ml-2'>{`${myOrders.date}`}</p>     
+                <p className='font-semibold underline ml-2'>{`Date: ${myOrders.date}`}</p>     
                 <img src={dateIcon} alt="" className='ml-2'/> 
                 </div>
 
@@ -21,7 +21,7 @@ function MyOrderItem({myOrders}) {
                 </div>
 
                 <div className='flex items-center mt-5 mr-4'>
-                    <p className='font-semibold underline'>{`$${myOrders.totalprice}`}</p>
+                    <p className='font-semibold underline'>{`Price: $${myOrders.price}`}</p>
                     <img src={simbolMoney} alt="" />
                 </div>
                 
