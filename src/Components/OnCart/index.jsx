@@ -1,25 +1,26 @@
+import { ProductContext } from '../../Context';
+import CartItems from './CartItems';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CartItems from './CartItems';
-import { sumProductCart, totalProductCart } from '../../Utils';
 import './style.css'
 import xMark from '../../imgs/x-sm.png';
+import { sumProductCart, totalProductCart } from '../../Utils';
 
-function OnCart({
-  setItemNumber,
-  itemNumber,
-  setinfoProductOpen,
-  setShoppingProducts,
-  shoppingProducts,
-  setisOpenShoppingCart,
-  isOpenShoppingCart,
-  myOrders,
-  setMyOrders,
-  setPreviousOrder,
-  myOrdersId,
-  setMyOrdersId,
-} 
-) {
+function OnCart() {
+    const {
+      setItemNumber,
+      itemNumber,
+      setinfoProductOpen,
+      setShoppingProducts,
+      shoppingProducts,
+      setisOpenShoppingCart,
+      isOpenShoppingCart,
+      myOrders,
+      setMyOrders,
+      setPreviousOrder,
+      myOrdersId,
+      setMyOrdersId,
+    } = React.useContext(ProductContext)
 
     // Add To cart : Add Product To The Shopping Cart Array 
     const addToCart = (data) => {

@@ -27,9 +27,9 @@ function LocalStorageUser() {
 
     const updateUsers = (newUsers) => {
         localStorage.setItem('users-YourStore', newUsers);
-        setUsers(newUsers);
+        setUsers( newUsers );
     }
-    return {users, updateUsers}
+    return { users, updateUsers }
 }
 
 export { LocalStorageUser }

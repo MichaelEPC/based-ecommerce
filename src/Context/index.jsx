@@ -64,6 +64,12 @@ function ProductProvider({children}) {
     // User ID : Makes an unique ID for every user
     const {userID, updateUniqueId : setUserID } = LocalStorageUniqueUserId();
 
+    // User account aside : An statement that open the aside account menu
+    const [isAccountSideOpen, setIsAccountSideOpen] = React.useState(false);
+    
+    // User account Aside : An state that open the aside account from the un-sing in users
+    const [isAccountSideOpenSingUp, setIsAccountSideOpenSingUp] = React.useState(false);
+
 
     const filterProductsByCategory = productCard.filter(
         product => {
@@ -75,7 +81,7 @@ function ProductProvider({children}) {
             return productCard
         }
     )
-
+        
     const filterProducts = filterProductsByCategory.filter(
         product => {
         const searchInput = SearchProducts.toLocaleLowerCase();
@@ -127,6 +133,10 @@ function ProductProvider({children}) {
             leftRight,
             currentUser,
             setCurrentUser,
+            isAccountSideOpen,
+            setIsAccountSideOpen,
+            setIsAccountSideOpenSingUp,
+            isAccountSideOpenSingUp
         }}>
             {children}
         </ProductContext.Provider>

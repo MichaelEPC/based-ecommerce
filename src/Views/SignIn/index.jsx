@@ -10,14 +10,6 @@ function SignIn() {
     users,
     setIsUserSingIn,
     setCurrentUser,
-    itemNumber,
-    setinfoProductOpen,
-    setisOpenShoppingCart,
-    setCategorySelected,
-    filterProductsByCategory,
-    isUserSingIn,
-    leftNav,
-    leftRight,
   } = React.useContext(ProductContext);
 
   return (

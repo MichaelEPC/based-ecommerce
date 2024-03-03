@@ -1,8 +1,20 @@
+import React from 'react';
+import { ProductContext } from '../../Context';
 import xMark from '../../imgs/x-sm.png'
 import './style.css'
 
-function ProductInfo({ setItemNumber, itemNumber, infoProductOpen, setinfoProductOpen, ProductInfoFill, shoppingProducts, setShoppingProducts, setisOpenShoppingCart }) {
+function ProductInfo({ ProductInfoFill, }) {
     
+    const {
+        setItemNumber,
+        itemNumber,
+        infoProductOpen,
+        setinfoProductOpen,
+        shoppingProducts,
+        setShoppingProducts,
+        setisOpenShoppingCart,
+    } = React.useContext(ProductContext);
+
     // Add To cart : Add Product To The Shopping Cart Array 
     const addToCart = (data) => {
         setItemNumber(itemNumber + 1);
