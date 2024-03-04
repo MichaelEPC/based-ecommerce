@@ -10,12 +10,17 @@ function Card({ products, }) {
         itemNumber, 
         setinfoProductOpen, 
         setProductInfoFill, 
-        shoppingProducts, 
-        setShoppingProducts, 
         setisOpenShoppingCart,
         setIsAccountSideOpen,
         setIsAccountSideOpenSingUp,
+        setShoppingProducts,
+        shoppingProducts,
+        setCurrentUser,
+        currentUser,
+        setUsers,
+        users,
     } = React.useContext(ProductContext);
+
     // Render Product Infomation : Saves Info product / Open aside info product
     const renderInfoProduct = () => {
         setProductInfoFill(products);    
@@ -25,10 +30,27 @@ function Card({ products, }) {
     // Add To cart : Add Product To The Shopping Cart Array 
     const addToCart = (products) => {
         setItemNumber(itemNumber + 1);
-        const cartProducts = shoppingProducts;
-        cartProducts.push(products);    
-        setShoppingProducts(cartProducts);
+        let listOfProducts = shoppingProducts;
+        listOfProducts.push(products);
+        setShoppingProducts(listOfProducts);
         openAsideCart();
+        
+        // (For future updates)
+        // let newCurrentUser = JSON.parse(currentUser);
+        // const listOnCart = newCurrentUser.onCart;
+        // listOnCart.push(products);
+        // newCurrentUser.onCart == listOnCart;
+
+        // let temporalUsersList = users;
+        // for (let index = 0; index < temporalUsersList.length; index++) {
+        //     if (temporalUsersList[index].id === currentUser.id) {
+        //     }
+        // }
+        // newCurrentUser = JSON.stringify(newCurrentUser);
+        // setCurrentUser(newCurrentUser);
+        // temporalUsersList = JSON.stringify(temporalUsersList);
+        // setUsers(temporalUsersList)
+        // setShoppingProducts(listOnCart);
     }
 
     // Open Product Info : Open aside with the product information
@@ -41,8 +63,10 @@ function Card({ products, }) {
 
     // Open Cart View : Open aside cart with the products that been added
     const openAsideCart = () => {
-        setinfoProductOpen(false);
         setisOpenShoppingCart(true);
+        setinfoProductOpen(false);
+        setIsAccountSideOpen(false);
+        setIsAccountSideOpenSingUp(false);
     }
 
     return (

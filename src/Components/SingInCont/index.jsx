@@ -1,25 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ProductContext } from '../../Context';
 import './style.css'
 import storeIcon from '../../imgs/storeIcon.png';
 
 
-function SignInCont({users, setIsUserSingIn, setCurrentUser}) {
+function SignInCont() {
+
+  const {
+    users, 
+    setIsUserSingIn, 
+    setCurrentUser,
+    currentUser,
+  } = React.useContext(ProductContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const emailValue = event.target.elements.email.value;
     const passwordValue = event.target.elements.password.value;
 
-    const copyOfUser = users;
-    for (const user of copyOfUser) {
-      if (user.email === emailValue) {
-        if (user.password === passwordValue) {
-          window.location.href = '/based-online-product-store/home';
-          setCurrentUser(user)
+    for (const copyOfUser of users) {
+      if (copyOfUser.email === emailValue) {
+        if (copyOfUser.password === passwordValue) {
+          setCurrentUser(copyOfUser);
           setIsUserSingIn(true);
-        }
+          window.location.href = '/based-online-product-store/home';
+        } 
       } 
     }
 }

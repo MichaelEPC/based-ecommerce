@@ -10,7 +10,15 @@ function LocalStorageConcurrenUser() {
             user = JSON.parse(userConcurrence);
             if (!user) {
                 try {
-                    localStorage.setItem('currenUser-YourStore', JSON.stringify(null));
+                    localStorage.setItem('currenUser-YourStore', JSON.stringify({ 
+                        id: 0,
+                        email: '', 
+                        password: '', 
+                        name: '',
+                        adress: '',
+                        orders: [],
+                        onCart: [],
+                      }));
                 } catch (error) {
                     alert(error)
                 }
@@ -28,6 +36,7 @@ function LocalStorageConcurrenUser() {
         localStorage.setItem('currenUser-YourStore', JSON.stringify(user));
         setCurrentUser(user);
     }
+    
     
     return {currentUser, updateCurrenUser};
 }

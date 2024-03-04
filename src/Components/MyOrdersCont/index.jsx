@@ -1,10 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ProductContext } from '../../Context';
 import MyOrderItem from './MyOrderItem';
 import { sumTotalPriceOrder } from '../../Utils'
 import './style.css'
 
-function MyOrdersCont({myOrders, setPreviousOrder}) {
+function MyOrdersCont() {
+  const {
+    currentUser,
+    setPreviousOrder,
+    setMyOrders,
+    myOrders,
+  } = React.useContext(ProductContext);
+
+  // Updates constatly the MyOrders section
+  React.useEffect(() => {
+    setTimeout(() => {
+      (function () {
+        setMyOrders(currentUser.orders);
+      })();
+    }, 400)
+  })
+  
   return (
     <>
     <div className='title-my-orders'>
@@ -12,7 +29,7 @@ function MyOrdersCont({myOrders, setPreviousOrder}) {
     </div>
     <div className='my-orders-container flex flex-col items-center bg-gray-100 rounded-lg mt-5 overflow-auto'>
       {
-        myOrders?.map(myOrders => (
+        myOrders?.map( myOrders => (
           <Link to={`/based-online-product-store/my-order/${myOrders.id}`} onClick={() =>{
             setPreviousOrder(myOrders.products)
           }}>

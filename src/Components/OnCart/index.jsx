@@ -6,39 +6,41 @@ import './style.css'
 import xMark from '../../imgs/x-sm.png';
 import { sumProductCart, totalProductCart } from '../../Utils';
 
-function OnCart() {
+function OnCart({ shoppingProducts }) {
     const {
       setItemNumber,
       itemNumber,
       setinfoProductOpen,
       setShoppingProducts,
-      shoppingProducts,
       setisOpenShoppingCart,
       isOpenShoppingCart,
-      myOrders,
       setMyOrders,
       setPreviousOrder,
       myOrdersId,
       setMyOrdersId,
+      setCurrentUser,
+      currentUser,
+      users,
+      setUsers,
+      isUserSingIn,
     } = React.useContext(ProductContext)
-
-    // Add To cart : Add Product To The Shopping Cart Array 
-    const addToCart = (data) => {
-        setItemNumber(itemNumber + 1);
-        const cartProducts = shoppingProducts;
-        cartProducts.push(data);    
-        setShoppingProducts(cartProducts);
-    }
 
     // Add To MyOrders : Add Product To The MyOrders Array 
     const addToMyOrders = () => {
+      // Verifys
+      if (isUserSingIn ===  false) {
+        return;
+      }
+      
       setItemNumber(itemNumber-itemNumber);
       const cartProducts = shoppingProducts;
+
       // Get Date
       const today = new Date();
       const day = today.getDate();
       const month = today.getMonth()+1;
       const year = today.getFullYear();
+
       // Make an unique ID for products
       setMyOrdersId(myOrdersId + 1);
 
@@ -49,13 +51,25 @@ function OnCart() {
         price: sumProductCart(cartProducts),
         totalproducts: cartProducts.length,
       }
-      const listMyOrders = myOrders;
-      listMyOrders.push(MyOrder);    
+
+      let newCurrentUser;
+      const temporalUsersList = users;
+      let listOrdersUser;
+      for (let index = 0; index < temporalUsersList.length; index++) {
+        if (temporalUsersList[index].id === currentUser.id) {
+          listOrdersUser = temporalUsersList[index].orders;
+          listOrdersUser.push(MyOrder);    
+          temporalUsersList[index].orders = listOrdersUser;
+          temporalUsersList[index].onCart = [];
+          newCurrentUser = temporalUsersList[index];
+        }
+      }
+      setUsers(temporalUsersList);
+      setCurrentUser(newCurrentUser);
+      setMyOrders(listOrdersUser);
       setShoppingProducts([]);
-      setMyOrders(listMyOrders);
       setisOpenShoppingCart(false)
       setPreviousOrder(cartProducts);
-      
   }
 
     return (
@@ -72,7 +86,7 @@ function OnCart() {
         </div>
         <div className='products-container flex flex-col overflow-x-hidden overflow-y-auto'>
         {
-        shoppingProducts?.map(shoppingProducts => (
+        shoppingProducts?.map( shoppingProducts => (
         <CartItems 
         key={shoppingProducts.id} data={shoppingProducts} setinfoProductOpen={setinfoProductOpen} 
         itemNumber={itemNumber} setItemNumber={setItemNumber}

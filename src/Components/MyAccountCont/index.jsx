@@ -24,8 +24,7 @@ function MyAccountCont({}) {
     index = index - 1;
     let usersList = [...users];
     usersList = usersList.splice(index, 1);
-    const parseCopyOfUser = JSON.stringify(usersList);
-    setUsers(parseCopyOfUser);
+    setUsers(usersList);
     setIsUserSingIn('false');
     setCurrentUser({});
     window.location.href = '/based-online-product-store/sing-in';
@@ -59,9 +58,8 @@ const handleEditAccount = (event) => {
       usersTemporalList[index].adress = adress;
     }
     const copyListChanged = [...usersTemporalList];
-    const sentChange = JSON.stringify(copyListChanged);
-    console.log(sentChange);
-    setUsers(sentChange);
+    console.log(copyListChanged);
+    setUsers(copyListChanged);
     
   }
 }

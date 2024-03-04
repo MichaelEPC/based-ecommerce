@@ -1,10 +1,18 @@
 import React from 'react';
+import { ProductContext } from '../../Context';
 import { Link } from 'react-router-dom';
 import  backIcon from '../../imgs/flecha-izquierda.png'
 import './style.css'
 import storeIcon from '../../imgs/storeIcon.png'; 
 
-function SignUpCont({users, setUsers, userID, setUserID}) {
+function SignUpCont() {
+
+  const {
+    users, 
+    setUsers, 
+    userID, 
+    setUserID,
+  } = React.useContext(ProductContext)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,12 +31,13 @@ function SignUpCont({users, setUsers, userID, setUserID}) {
       password: passwordValue, 
       name: nameValue,
       adress: adressValue,
+      orders: [],
+      onCart: [],
     }
     const copyOfUser = users;
     copyOfUser.push(newUser);
-    const parseCopyOfUser = JSON.stringify(copyOfUser);
-    setUsers(parseCopyOfUser);
-
+    console.log(copyOfUser);
+    setUsers(copyOfUser);
     window.location.href = '/based-online-product-store/';
 };
 

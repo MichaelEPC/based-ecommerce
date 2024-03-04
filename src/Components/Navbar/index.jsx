@@ -28,7 +28,6 @@ function Navbar() {
     setinfoProductOpen(false);
     setIsAccountSideOpen(false);
     setIsAccountSideOpenSingUp(false);
-
   }
 
   // Open account aside : Open account user options, if user its login in system it will show diferent options
