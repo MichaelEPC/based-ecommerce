@@ -1,15 +1,15 @@
 import { NavLink } from "react-router-dom";
 import './style.css';
 
-function NavItems ({ className, to, navbarName, activeStyle, on, setCategorySelected}) {
+function NavItems ({ className, to, navbarName, activeStyle, on, setCategorySelected, responsiveDesktop }) {
   return (
-    <li className={className} onClick={() => {
-        setCategorySelected(on);
+    <li className={className + ' ' + responsiveDesktop} onClick={() => {
+        setCategorySelected(on)
     }}>
       <NavLink to={to} className={
           ({ isActive }) => (isActive ? activeStyle : undefined)
         }>
-        <p className={`nav-items-text ${className}`} >{navbarName}</p>
+        <p className={`nav-items-text text-white font-normal ${className}`} >{navbarName}</p>
       </NavLink>
     </li>
   )

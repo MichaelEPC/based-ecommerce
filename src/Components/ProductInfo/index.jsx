@@ -32,7 +32,7 @@ function ProductInfo({ ProductInfoFill, }) {
   
     return (
       <>
-       <aside className={`${infoProductOpen ? 'product-info fixed bg-gray-100 border-black right-0' : 'hidden'}`}>
+       <aside className={`${infoProductOpen ? ' product-info fixed bg-gray-100 border-black right-0' : 'hidden'}`}>
         
        <div className='flex justify-end items-end'>
             <div className='div-product-info-xmark rounded-full'>

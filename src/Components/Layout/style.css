@@ -1,0 +1,5 @@
+.layout {
+    height: 100%;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 10%, rgba(205,205,205,1) 100%);
+}

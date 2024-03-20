@@ -35,15 +35,15 @@ const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
             }  
             if (isUserSingIn == 'false') {
                 const left = [
-                    { name: 'All', to: '/based-online-product-store/home', className: 'text-white font-normal', onClick: 'null' },
-                    { name: "men's clothing", to: "/based-online-product-store/home/mens-clothing", className: 'text-white font-normal', on: "men's clothing" },
-                    { name: "women's clothing", to: "/based-online-product-store/home/womens-clothing",className: 'text-white font-normal', on: "women's "},
-                    { name: 'jewelery', to: "/based-online-product-store/home/jewelery", className: 'text-white font-normal', on: "jewelery" },
-                    { name: 'electronics', to: "/based-online-product-store/home/electronics", className: 'text-white font-normal', on: "electronics" },
+                    { name: 'All', to: '/based-online-product-store/home', onClick: 'null' },
+                    { name: "men's clothing", to: "/based-online-product-store/home/mens-clothing", on: "men's clothing" },
+                    { name: "women's clothing", to: "/based-online-product-store/home/womens-clothing", on: "women's "},
+                    { name: 'jewelery', to: "/based-online-product-store/home/jewelery", on: "jewelery" },
+                    { name: 'electronics', to: "/based-online-product-store/home/electronics", on: "electronics" },
                   ]
                   // Right part of nav
                   const right = [
-                  { name: 'Sign-in', to: '/based-online-product-store/sing-in', className: 'text-white font-normal'}
+                  { name: 'Sign-in', to: '/based-online-product-store/sing-in'}
                   ]
                 setLeftNav(left);
                 setRightNav(right);
@@ -51,16 +51,15 @@ const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
             } if (isUserSingIn == 'true') {
                 // Left part of nav
                  const left = [
-                  { name: 'All', to: '/based-online-product-store/home', className: 'text-white font-normal', onClick: 'null' },
-                  { name: "men's clothing", to: "/based-online-product-store/home/mens-clothing", className: 'text-white font-normal', on: "men's clothing" },
-                  { name: "women's clothing", to: "/based-online-product-store/home/womens-clothing",className: 'text-white font-normal', on: "women's "},
-                  { name: 'jewelery', to: "/based-online-product-store/home/jewelery", className: 'text-white font-normal', on: "jewelery" },
-                  { name: 'electronics', to: "/based-online-product-store/home/electronics", className: 'text-white font-normal', on: "electronics" },
+                  { name: 'All', to: '/based-online-product-store/home', onClick: 'null' },
+                  { name: "men's clothing", to: "/based-online-product-store/home/mens-clothing", on: "men's clothing" },
+                  { name: "women's clothing", to: "/based-online-product-store/home/womens-clothing", on: "women's "},
+                  { name: 'jewelery', to: "/based-online-product-store/home/jewelery", on: "jewelery" },
+                  { name: 'electronics', to: "/based-online-product-store/home/electronics", on: "electronics" },
                 ]
                 // Right part of nav
                 const right = [
-                { name: 'My Orders', to: '/based-online-product-store/my-orders', className: 'text-white font-normal' },
-                // { name: 'Account', to: '/based-online-product-store/my-account', className: 'text-white font-normal' },
+                { name: 'My Orders', to: '/based-online-product-store/my-orders'},
                 ]
                 setLeftNav(left);
                 setRightNav(right);

@@ -27,6 +27,29 @@
     height: 5rem;
 }
 
+.select-category-button {
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+}
+
 .text-gray {
     color: rgb(131, 133, 131);
 }
+
+@media screen and (max-width: 850px) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 851px) {
+    .nav-mobile {
+        display: none;
+    }
+    
+    .mobile {
+        display: none;
+    }
+}
+  

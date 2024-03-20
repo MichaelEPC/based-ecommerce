@@ -1,13 +1,15 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { ProductContext } from "../../Context";
-import NavItems from "./NavItems"
-import AccountOptions from "../AccountOptions"
+import React from 'react';
+import './style.css';
+import { NavLink } from 'react-router-dom';
+import { ProductContext } from '../../Context';
+import NavItems from './NavItems';
+import SelectCategory from './SelectCategory';
+import AccountOptions from '../AccountOptions';
 import AccountSingIn from "../AccountSingIn/index";
-import "./style.css";
 import bagCart from '../../imgs/bolso-shopping-cuadrado-con-asa-sm.png';
 import userIcon from '../../imgs/userIcon-sm.png';
 import storeIcon from '../../imgs/storeIcon.png'; 
+import selectCategory from '../../imgs/menu-icon.png'
 
 function Navbar() {
   const {
@@ -20,8 +22,14 @@ function Navbar() {
     setIsAccountSideOpen, 
     isUserSingIn, 
     setIsAccountSideOpenSingUp,
+    navbarButtonMobile,
+    setNavbarButtonMobile,
   } = React.useContext(ProductContext);
   
+  // Navbar responsive indicator
+  const responsiveDesktop = 'desktop';
+  const responsiveMobile = 'mobile';
+
   // Open Cart View : Open aside cart with products in it
   const openAsideCart = () => {
     setisOpenShoppingCart(true);
@@ -47,6 +55,26 @@ function Navbar() {
       return;
     }
   }
+
+  // Open menu mobile aside : Open mobile menu user options, electronics, clothes, jewelery and all
+  const openMobileMenu = () => {
+    if (navbarButtonMobile == false) {
+      setisOpenShoppingCart(false);
+      setinfoProductOpen(false);
+      setIsAccountSideOpenSingUp(false);
+      setIsAccountSideOpen(false);
+      setNavbarButtonMobile(true);
+      return;
+    }
+    else {
+      setisOpenShoppingCart(false);
+      setinfoProductOpen(false);
+      setIsAccountSideOpen(false);
+      setIsAccountSideOpenSingUp(false);
+      setNavbarButtonMobile(false);
+      return;
+    }
+  }
   
   return (
     <nav className="navbar bg-green-500 flex justify-between items-center fixed z-10 w-full py-5 px-2 text-base top-0">
@@ -59,8 +87,16 @@ function Navbar() {
           </NavLink>
         </div>
 
-        {leftNav.map(({name, to, className, on}) => ( 
-          <NavItems key={ name } className={ className } navbarName={ name } to={ to } on={on} setCategorySelected= {setCategorySelected }/>
+        <li>
+            <img className='nav-mobile select-category-button' onClick={() => { openMobileMenu() }} src={ selectCategory } alt="icon" />
+        </li>
+
+        <SelectCategory navbarButtonMobile={ navbarButtonMobile } setNavbarButtonMobile={ setNavbarButtonMobile } leftNav={ leftNav }
+        setCategorySelected={ setCategorySelected } responsiveMobile={ responsiveMobile }/>
+
+        {leftNav.map(({ name, to, className, on }) => ( 
+          <NavItems key={ name } className={ className } navbarName={ name } to={ to } on={ on } setCategorySelected= { setCategorySelected }
+          responsiveDesktop={ responsiveDesktop }/>
         ))}
 
       </ul>
@@ -78,10 +114,10 @@ function Navbar() {
         ))}
 
         <li>
-          <div>
+          <div className='mr-2'>
           <img src={ bagCart } alt="" className="cursor-pointer"
           onClick={() => openAsideCart()}/>
-          <div className="bg-white flex justify-center absolute rounded-full w-3 top-2 right-0">{ itemNumber }</div>
+          <div className="bg-white flex justify-center absolute rounded-full w-3 top-2 right-2">{ itemNumber }</div>
           </div>
         </li>
 

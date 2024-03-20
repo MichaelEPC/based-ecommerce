@@ -71,6 +71,9 @@ function ProductProvider({children}) {
     // Array Products Cart : Saves products in an array that been added to the Shopping cart
     const [shoppingProducts, setShoppingProducts] = React.useState([]);
     
+    // Button for category products (mobile) : An state that open the aside for better visibility
+    const [navbarButtonMobile, setNavbarButtonMobile] = React.useState(false);
+
     const filterProductsByCategory = productCard.filter(
         product => {
             if (categorySelected) {
@@ -136,7 +139,9 @@ function ProductProvider({children}) {
             isAccountSideOpen,
             setIsAccountSideOpen,
             setIsAccountSideOpenSingUp,
-            isAccountSideOpenSingUp
+            isAccountSideOpenSingUp,
+            navbarButtonMobile,
+            setNavbarButtonMobile,
         }}>
             {children}
         </ProductContext.Provider>
