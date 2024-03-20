@@ -31,7 +31,7 @@ function Home() {
         <input type="text" placeholder='"Shirt" "Laptop" "Clothes"' className='input-search-products pl-2 font-light focus:outline-green-500' 
         onChange={(event) => { setSearchProducts(event.target.value) }}/>
       </div>
-    <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
+    <div className='main-grid-products'>
     {
       filterProducts.length > 0 && <NotFoundProduct/>
       && filterProducts?.map( productCard => (
