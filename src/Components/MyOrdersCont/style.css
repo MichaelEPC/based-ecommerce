@@ -1,6 +1,6 @@
 .my-orders-container {
     height: 75vh;
-    width: 500px;
+    width: 50rem;
     border: 1px solid black;
 }
 
@@ -43,4 +43,19 @@
     height: auto;
     width: auto;
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 510px) {
+    .my-orders-container {
+        width: 42rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .my-orders-container {
+        width: 32rem;
+    }
+    .info-div-my-orders {
+        width: 32rem;
+    }
 }

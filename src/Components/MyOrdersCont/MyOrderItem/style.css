@@ -1,8 +1,31 @@
 .my-orders-item-container {
-    width: 480px;
-    height: 70px;
+    height: 7rem;
+    width: 48rem;
 }
 
 .my-orders-item-container p {
     font-size: 1.2rem;
+}
+
+.info-my-order-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 510px) {
+    .my-orders-item-container {
+        width: 40rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .my-orders-item-container {
+        width: 32rem;
+    }
+    .info-my-order-item {
+        display: flex;
+        flex-direction: column;
+    }
 }
