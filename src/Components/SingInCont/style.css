@@ -1,8 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
 .main-container {
     width: 45rem;
@@ -60,7 +55,13 @@ form {
 }
 
 .info-text {
+    height: auto;
+    width: 1rem;
     font-size: 2rem;
+}
+
+.reduce-width {
+    width: 2rem;
 }
 
 .form-input {
@@ -112,3 +113,14 @@ form {
 }
 }
   
+@media screen and (max-width: 460px) {
+    .main-container {
+        width: 32rem;
+    }
+    .input-container {
+        width: 31rem;
+    }
+    .form-input {
+        width: 22rem;
+    }
+}

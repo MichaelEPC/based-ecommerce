@@ -32,7 +32,7 @@ function SignInCont() {
 
 return (
   <>
-  <div className='flex flex-col justify-center items-center w-full h-full'>
+  <div className='flex flex-col justify-center items-center'>
     <div className='main-container'>
 
     <div className='flex flex-col items-center'>
@@ -47,12 +47,12 @@ return (
       <div className='input-container flex flex-col items-center rounded-lg'>
       <p className='sing-up-title font-semibold'>Sign in</p>
       <form action="" onSubmit={handleSubmit}>
-        <div className=' mt-10'>
+        <div className='reduce-width mt-10'>
             <p className='info-text font-semibold mt-1 cursor-default'>Email:</p>
             <input type="email" name='email' placeholder='' className='form-input rounded-lg focus:outline-green-500' required/>
         </div>
 
-        <div className='mt-10'>
+        <div className='reduce-width mt-10'>
             <p className='info-text font-semibold cursor-default'>Password:</p>
             <input type="password" name='password' placeholder='*********' className='form-input rounded-lg p-2 focus:outline-green-500'
             required/>
