@@ -1,16 +1,26 @@
 .my-order-container {
-    width: 52rem;
     height: auto;
+    width: auto;
 }
 
-.title-my-order {
+.title-my-order p {
     font-size: 2rem;
-    font-family: sans-serif
+    font-family: sans-serif;
 }
 
 .my-order-products-container {
     height: 60rem;
+    width: 52rem;
     box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+.order-info-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
 }
 
 .info-div-my-order {
@@ -42,4 +52,16 @@
 
 .a-my-order:hover {
     color: rgb(196, 85, 0);
+}
+
+@media screen and (max-width: 530px) {
+    .my-order-products-container {
+        width: 42rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .my-order-products-container {
+        width: 32rem;
+    }
 }

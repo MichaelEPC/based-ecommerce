@@ -20,3 +20,50 @@
     font-size: 1.2rem;
 }
 
+@media screen and (max-width: 530px) {
+    .my-order-items {
+        height: 4rem;
+    }
+    
+    .my-order-items img {
+        height: 4rem;
+        width: 4rem;
+    }
+    
+    .my-order-items p:nth-child(2) {
+        height: 2.5rem;
+        width: auto;
+        max-width: 20rem;
+        font-size: 1.2rem;
+    }
+    
+    .my-order-items p:nth-child(3) {
+        height: 2.5rem;
+        width: auto;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .my-order-items {
+        height: 4rem;
+    }
+    
+    .my-order-items img {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    
+    .my-order-items p:nth-child(2) {
+        height: 2.5rem;
+        width: auto;
+        max-width: 20rem;
+        font-size: 1.2rem;
+    }
+    
+    .my-order-items p:nth-child(3) {
+        height: 2.5rem;
+        width: auto;
+        font-size: 1.2rem;
+    }
+}

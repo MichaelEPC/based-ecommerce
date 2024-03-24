@@ -23,7 +23,7 @@ function MyOrderCont({ previousOrder }) {
               />))
               }
             </div>
-            <div className='flex flex-col items-center'>
+            <div className='order-info-container'>
               <div className='info-div-my-order flex justify-between items-center bg-white'>
               <p className='font-semibold'>{`Total Products: ${previousOrder.length}`}</p>
               <p className='bg-green-500 font-semibold text-white rounded-lg pl-2 pr-2'>{`Price: $${sumProductCart(previousOrder)}`}</p>
