@@ -1,13 +1,12 @@
 .my-account-main-container {
-    height: 80vh;
-    width: 200rem;
+    height: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .my-account-edit-container {
-    height: 32rem;
+    height: 22rem;
     width: 32rem;
     border-top: 0.2rem solid rgb(148, 148, 148);
     border-left: 0.2rem solid rgb(148, 148, 148);
@@ -15,11 +14,19 @@
 }
 
 .my-account-container {
-    height: 68rem;
+    height: 78rem;
     width: 48rem;
     border: 0.2rem solid rgb(148, 148, 148);
 }
 
+.my-account-input {
+    border: 0.2rem solid rgb(148, 148, 148);
+    width: 32rem;
+    height: 4rem;
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+}
 
 .my-account-edit-container p {
     height: 4rem;
@@ -46,10 +53,10 @@
 }
 
 .my-account-green-button {
-    height: 6rem;
+    height: 4rem;
     width: 24rem;
     font-size: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 4.5rem;
 }
 
 
@@ -74,4 +81,51 @@
     border-radius: 50%;
     border: 6px solid hsl(130 80% 50%);
     clip-path: polygon(0 0, 50% 50%, 100% 0);
+}
+
+@media screen and (max-width: 580px) {
+    .my-account-main-container {
+        height: auto;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .my-account-edit-container {
+        height: 16rem;
+        width: 32rem;
+        border-right: 0.2rem solid rgb(148, 148, 148);
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .my-account-container   {
+        height: auto;
+        width: 40rem;
+        flex-direction: column-reverse;
+    }
+    .my-account-edit-container {
+        height: 16rem;
+        width: 40rem;
+        border-right: 0.2rem solid rgb(148, 148, 148);
+    }
+    .my-account-green-button {
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .my-account-container   {
+        height: auto;
+        width: 30rem;
+        flex-direction: column-reverse;
+    }
+    .my-account-edit-container {
+        height: 16rem;
+        width: 24rem;
+    }
+    .my-account-green-button {
+        margin-bottom: 2rem;
+    }
+    .my-account-input {
+        width: 26rem;
+    }
 }

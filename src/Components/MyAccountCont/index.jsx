@@ -75,7 +75,7 @@ return (
           >Delete account</button>
         </div>
       </div>
-      <div className='my-account-container mt-4 rounded-lg'>
+      <div className='my-account-container rounded-lg'>
         <div className='flex flex-col items-center'>
            <div className='div-icon rounded-full w-48'>
               <Link to={'/based-online-product-store/home'}>
@@ -92,29 +92,29 @@ return (
           <div className='my-account-input-container flex flex-col'>
             <p className='font-semibold cursor-default mb-2'>Email: </p>
             <div>
-              <input className='form-input focus:outline-green-500' name='email' type="email" defaultValue={currentUser.email} minLength={8} maxLength={89}/>
+              <input className='my-account-input focus:outline-green-500' name='email' type="email" defaultValue={currentUser.email} minLength={8} maxLength={89}/>
 
             </div>
           </div>
 
           <div className='my-account-input-container flex flex-col'>
             <p className='font-semibold cursor-default mb-2'>Name: </p>
-            <input className='form-input focus:outline-green-500' type="text" name='name' defaultValue={currentUser.name} minLength={4} maxLength={89}/>
+            <input className='my-account-input focus:outline-green-500' type="text" name='name' defaultValue={currentUser.name} minLength={4} maxLength={89}/>
           </div>
 
           <div className='my-account-input-container flex flex-col'>
             <p className='font-semibold cursor-default mb-2'>Password: </p>
-            <input className='form-input focus:outline-green-500' type="password" name='passwordFirst' placeholder='**********' minLength={5} maxLength={89}/>
+            <input className='my-account-input focus:outline-green-500' type="password" name='passwordFirst' placeholder='**********' minLength={5} maxLength={89}/>
           </div>
 
           <div className='my-account-input-container flex flex-col'>
             <p className='font-semibold cursor-default mb-2'>Confirm Password: </p>
-            <input className='form-input focus:outline-green-500' type="password" name='passwordSecond' placeholder='*********' minLength={5} maxLength={89}/>
+            <input className='my-account-input focus:outline-green-500' type="password" name='passwordSecond' placeholder='*********' minLength={5} maxLength={89}/>
           </div>
 
           <div className='my-account-input-container flex flex-col'>
             <p className='font-semibold cursor-default mb-2'>Adress: </p>
-            <input className='form-input focus:outline-green-500' type="text" name='adress' defaultValue={currentUser.adress} minLength={8} maxLength={89}/>
+            <input className='my-account-input focus:outline-green-500' type="text" name='adress' defaultValue={currentUser.adress} minLength={8} maxLength={89}/>
           </div>
           
           </div>
