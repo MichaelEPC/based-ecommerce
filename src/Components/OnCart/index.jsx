@@ -1,8 +1,8 @@
-import { ProductContext } from '../../Context';
-import CartItems from './CartItems';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './style.css'
+import { ProductContext } from '../../Context';
+import CartItems from './CartItems';
 import xMark from '../../imgs/x-sm.png';
 import { sumProductCart, totalProductCart } from '../../Utils';
 
@@ -74,7 +74,7 @@ function OnCart({ shoppingProducts }) {
 
     return (
       <>
-       <aside className={`${isOpenShoppingCart ? 'aside-cart fixed bg-gray-100 border-black right-4' : 'hidden'}`}>
+       <aside className={`${isOpenShoppingCart ? 'aside-cart fixed bg-gray-100 border-black' : 'hidden'}`}>
 
         <div className='flex justify-end'>
           <img src={xMark} alt="" className='xmark-icon cursor-pointer'

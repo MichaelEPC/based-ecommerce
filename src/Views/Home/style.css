@@ -26,6 +26,8 @@
     width: 100%;
     max-width: 110.4rem;
     display: grid;
+    justify-content: center;
+    align-items: center;
     gap: 4;
     grid-template-columns: repeat(4, 1fr);
 }

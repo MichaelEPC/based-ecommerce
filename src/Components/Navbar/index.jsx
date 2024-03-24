@@ -91,6 +91,7 @@ function Navbar() {
             <img className='nav-mobile select-category-button' onClick={() => { openMobileMenu() }} src={ selectCategory } alt="icon" />
         </li>
 
+        {/* Mobile layout menu */}
         <SelectCategory navbarButtonMobile={ navbarButtonMobile } setNavbarButtonMobile={ setNavbarButtonMobile } leftNav={ leftNav }
         setCategorySelected={ setCategorySelected } responsiveMobile={ responsiveMobile }/>
 

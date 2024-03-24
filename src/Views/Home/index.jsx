@@ -1,11 +1,11 @@
 import React from 'react';
-import Card from '../../Components/Card';
+import './style.css';
 import { ProductContext } from '../../Context';
+import Card from '../../Components/Card';
 import Layout from '../../Components/Layout';
 import Navbar from '../../Components/Navbar';
 import ProductInfo from '../../Components/ProductInfo';
 import NotFoundProduct from '../../Components/NotFoundProduct';
-import './style.css';
 
 function Home() {
   const {
@@ -23,29 +23,33 @@ function Home() {
   } = React.useContext(ProductContext);
 
   return (
-    <>
+    <>  
     <Navbar/>
     <Layout>
+      
       <div className='div-search-input flex-col justify-center items-center'>
         <p className='font-semibold text-center mb-1 '>Find products</p>
         <input type="text" placeholder='"Shirt" "Laptop" "Clothes"' className='input-search-products pl-2 font-light focus:outline-green-500' 
         onChange={(event) => { setSearchProducts(event.target.value) }}/>
       </div>
-    <div className='main-grid-products'>
-    {
-      filterProducts.length > 0 && <NotFoundProduct/>
-      && filterProducts?.map( productCard => (
-        <Card key={productCard.id} products={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}
-          setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill} setShoppingProducts={setShoppingProducts}
-          shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
-          />))
-    }
-    </div>
-    <ProductInfo 
-    setItemNumber={setItemNumber} itemNumber={itemNumber} infoProductOpen={infoProductOpen} 
-    setinfoProductOpen={setinfoProductOpen} ProductInfoFill={ProductInfoFill} setShoppingProducts={setShoppingProducts}
-    shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
-    />
+
+      <div className='main-grid-products ml-8 mr-4'>
+      {
+        filterProducts.length > 0 && <NotFoundProduct/>
+        && filterProducts?.map( productCard => (
+          <Card key={productCard.id} products={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}
+            setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill} setShoppingProducts={setShoppingProducts}
+            shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
+            />))
+      }
+      </div>
+
+      <ProductInfo 
+      setItemNumber={setItemNumber} itemNumber={itemNumber} infoProductOpen={infoProductOpen} 
+      setinfoProductOpen={setinfoProductOpen} ProductInfoFill={ProductInfoFill} setShoppingProducts={setShoppingProducts}
+      shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
+      />
+
     </Layout>
     </>
   )

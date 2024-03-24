@@ -4,7 +4,8 @@
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
-    top: 68px;
+    top: 6.8rem;
+    right: 1rem;
 }
 
 .xmark-icon {
@@ -24,7 +25,7 @@
 }
 
 .products-container {
-    height: 500px;
+    height: 50rem;
 }
 
 .info-div-cart {
@@ -45,4 +46,23 @@
     height: 4rem;
     width: 22rem;
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 950px) {
+    .aside-cart {
+        width: 32rem;
+        height: 52rem;
+    }
+    .products-container {
+        height: 32rem;
+    }
+    .info-div-cart {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .aside-cart {
+        right: 0;
+    }
 }
