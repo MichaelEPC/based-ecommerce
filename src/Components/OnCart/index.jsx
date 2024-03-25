@@ -27,8 +27,12 @@ function OnCart({ shoppingProducts }) {
 
     // Add To MyOrders : Add Product To The MyOrders Array 
     const addToMyOrders = () => {
-      // Verifys
-      if (isUserSingIn ===  false) {
+
+      if (shoppingProducts <= 0) {
+        return;
+      }
+
+      if (isUserSingIn ==  'false') {
         return;
       }
       

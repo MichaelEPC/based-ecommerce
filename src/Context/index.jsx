@@ -8,7 +8,15 @@ import { LocalStorageUniqueUserId } from "./LocalStorageUniqueIdUser";
 import { KeepProductsInCart } from "./KeepProductsInCart";
 
 const ProductContext = React.createContext();
+
 function ProductProvider({children}) {
+
+    // Loading skeleton for card in home : An state that makes visible the skeleton for cards products
+    const [loadingSkeletonCard, setLoadingSkeletonCard] = React.useState(true);
+
+    // Loading skeleton for my orders items in my orders section : An state that makes visible the skeleton for my orders item
+    const [loadingSkeletonItemOrders, setLoadingSkeletonItemOrders] = React.useState(true);
+
     // Options Nav : The navbar will update if the user doesnt have an account
     const [leftNav, setLeftNav] = React.useState([]);
 
@@ -16,7 +24,7 @@ function ProductProvider({children}) {
     const [leftRight, setRightNav] = React.useState([]);
 
     // Product Array : Get information products / API
-    const [productCard, setProductCard] = React.useState([]);
+    const { productCard, setProductCard } = CallForProducts(setLoadingSkeletonCard);
 
     // Shopping cart : Count the number of items added on the cart
     const [itemNumber, setItemNumber] = React.useState(0);
@@ -74,6 +82,7 @@ function ProductProvider({children}) {
     // Button for category products (mobile) : An state that open the aside for better visibility
     const [navbarButtonMobile, setNavbarButtonMobile] = React.useState(false);
 
+
     const filterProductsByCategory = productCard.filter(
         product => {
             if (categorySelected) {
@@ -92,12 +101,10 @@ function ProductProvider({children}) {
         return nameProduct.includes(searchInput);
         }
     )
-
-    CallForProducts(setProductCard);
-
+    
     updateNav(isUserSingIn, setLeftNav, setRightNav, currentUser);
     
-    return (
+        return (
         <ProductContext.Provider value={{
             setProductCard,
             productCard,
@@ -142,6 +149,9 @@ function ProductProvider({children}) {
             isAccountSideOpenSingUp,
             navbarButtonMobile,
             setNavbarButtonMobile,
+            loadingSkeletonCard,
+            setLoadingSkeletonItemOrders,
+            loadingSkeletonItemOrders
         }}>
             {children}
         </ProductContext.Provider>

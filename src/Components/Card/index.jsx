@@ -34,23 +34,6 @@ function Card({ products, }) {
         listOfProducts.push(products);
         setShoppingProducts(listOfProducts);
         openAsideCart();
-        
-        // (For future updates)
-        // let newCurrentUser = JSON.parse(currentUser);
-        // const listOnCart = newCurrentUser.onCart;
-        // listOnCart.push(products);
-        // newCurrentUser.onCart == listOnCart;
-
-        // let temporalUsersList = users;
-        // for (let index = 0; index < temporalUsersList.length; index++) {
-        //     if (temporalUsersList[index].id === currentUser.id) {
-        //     }
-        // }
-        // newCurrentUser = JSON.stringify(newCurrentUser);
-        // setCurrentUser(newCurrentUser);
-        // temporalUsersList = JSON.stringify(temporalUsersList);
-        // setUsers(temporalUsersList)
-        // setShoppingProducts(listOnCart);
     }
 
     // Open Product Info : Open aside with the product information

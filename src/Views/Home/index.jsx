@@ -5,7 +5,7 @@ import Card from '../../Components/Card';
 import Layout from '../../Components/Layout';
 import Navbar from '../../Components/Navbar';
 import ProductInfo from '../../Components/ProductInfo';
-import NotFoundProduct from '../../Components/NotFoundProduct';
+import SkeletonCardsProducts from '../../Components/Skeletons/SkeletonCardsProducts';
 
 function Home() {
   const {
@@ -20,7 +20,10 @@ function Home() {
     setisOpenShoppingCart,
     setSearchProducts,
     filterProducts,
+    loadingSkeletonCard,
   } = React.useContext(ProductContext);
+
+  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   return (
     <>  
@@ -35,19 +38,21 @@ function Home() {
 
       <div className='main-grid-products ml-8 mr-4'>
       {
-        filterProducts.length > 0 && <NotFoundProduct/>
-        && filterProducts?.map( productCard => (
-          <Card key={productCard.id} products={productCard} setItemNumber={setItemNumber} itemNumber={itemNumber}
-            setinfoProductOpen={setinfoProductOpen} setProductInfoFill={setProductInfoFill} setShoppingProducts={setShoppingProducts}
-            shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
-            />))
+        loadingSkeletonCard && (
+          items?.map(item => (
+            <SkeletonCardsProducts key={ item } />
+          ))
+        )}
+        {!loadingSkeletonCard && filterProducts?.map(productCard => (
+          <Card key={ productCard.id } products={ productCard } setItemNumber={ setItemNumber } itemNumber={ itemNumber } setinfoProductOpen={ setinfoProductOpen } setProductInfoFill={ setProductInfoFill } setShoppingProducts={ setShoppingProducts } shoppingProducts={ shoppingProducts } setisOpenShoppingCart={ setisOpenShoppingCart } />
+        ))
       }
       </div>
 
       <ProductInfo 
-      setItemNumber={setItemNumber} itemNumber={itemNumber} infoProductOpen={infoProductOpen} 
-      setinfoProductOpen={setinfoProductOpen} ProductInfoFill={ProductInfoFill} setShoppingProducts={setShoppingProducts}
-      shoppingProducts={shoppingProducts} setisOpenShoppingCart={setisOpenShoppingCart}
+      setItemNumber={ setItemNumber } itemNumber={ itemNumber } infoProductOpen={ infoProductOpen } 
+      setinfoProductOpen={ setinfoProductOpen } ProductInfoFill={ ProductInfoFill } setShoppingProducts={ setShoppingProducts }
+      shoppingProducts={ shoppingProducts } setisOpenShoppingCart={ setisOpenShoppingCart }
       />
 
     </Layout>

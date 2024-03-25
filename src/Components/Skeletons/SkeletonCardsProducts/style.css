@@ -1,0 +1,45 @@
+:root {
+    --loading-grey: #ededed;
+}
+
+.main-skeleton-card {
+  height: 24rem;
+  width: 20rem;
+  margin-top: 2rem;
+}
+
+.main-skeleton-card div {
+  height: 4rem;
+}
+
+.main-skeleton-card div span:nth-child(1) {
+  height: 2rem;
+  width: 12rem;
+  margin-left: 1rem;
+}
+
+.main-skeleton-card div span:nth-child(2) {
+  height: 1rem;
+  width: 4rem;
+  margin-right: 1rem;
+}
+
+.loading{
+    background-color: var(--loading-grey);
+    background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, .5) 50%,
+      rgba(255, 255, 255, 0) 60%
+    ) var(--loading-grey);
+    background-size: 200% 100%;
+    background-position-x: 180%;
+    animation: 1s loading ease-in-out infinite;
+    animation-delay: 0.1s;
+  }
+  
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
