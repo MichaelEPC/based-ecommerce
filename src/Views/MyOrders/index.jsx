@@ -1,25 +1,26 @@
-import React from 'react'
-import { ProductContext } from '../../Context'
-import Layout from "../../Components/Layout"
-import Navbar from "../../Components/Navbar"
-import MyOrdersCont from "../../Components/MyOrdersCont"
+import React from "react";
+import { ProductContext } from "../../Context";
+import Layout from "../../Components/Layout";
+import Navbar from "../../Components/Navbar";
+import MyOrdersCont from "../../Components/MyOrdersCont";
 
 function MyOrders() {
-  const {
-    myOrders,
-    previousOrder,
-    setPreviousOrder,
-  } = React.useContext(ProductContext);
+  const { myOrders, previousOrder, setPreviousOrder } =
+    React.useContext(ProductContext);
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Layout>
-        <p className="font-semibold text-lg">My Orders</p>
-        <MyOrdersCont myOrders={myOrders} previousOrder={previousOrder} setPreviousOrder={setPreviousOrder}/>
+        <p className="text-lg font-semibold">My Orders</p>
+        <MyOrdersCont
+          myOrders={myOrders}
+          previousOrder={previousOrder}
+          setPreviousOrder={setPreviousOrder}
+        />
       </Layout>
     </>
-  )
-  }
-  
-  export default MyOrders
+  );
+}
+
+export default MyOrders;

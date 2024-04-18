@@ -1,67 +1,80 @@
-import React from 'react';
-import { ProductContext } from '../../Context';
-import xMark from '../../imgs/x-sm.png'
-import './style.css'
+import React from "react";
+import { ProductContext } from "../../Context";
+import xMark from "../../imgs/x-sm.png";
+import "./style.css";
 
-function ProductInfo({ ProductInfoFill, }) {
-    
-    const {
-        setItemNumber,
-        itemNumber,
-        infoProductOpen,
-        setinfoProductOpen,
-        shoppingProducts,
-        setShoppingProducts,
-        setisOpenShoppingCart,
-    } = React.useContext(ProductContext);
+function ProductInfo({ ProductInfoFill }) {
+  const {
+    setItemNumber,
+    itemNumber,
+    infoProductOpen,
+    setinfoProductOpen,
+    shoppingProducts,
+    setShoppingProducts,
+    setisOpenShoppingCart,
+  } = React.useContext(ProductContext);
 
-    // Add To cart : Add Product To The Shopping Cart Array 
-    const addToCart = (data) => {
-        setItemNumber(itemNumber + 1);
-        const cartProducts = shoppingProducts;
-        cartProducts.push(data);    
-        setShoppingProducts(cartProducts);
-        openAsideCart()
-    }
+  // Add To cart : Add Product To The Shopping Cart Array
+  const addToCart = (data) => {
+    setItemNumber(itemNumber + 1);
+    const cartProducts = shoppingProducts;
+    cartProducts.push(data);
+    setShoppingProducts(cartProducts);
+    openAsideCart();
+  };
 
-    // Open Cart View : Open aside cart with products in it
-    const openAsideCart = () => {
-        setinfoProductOpen(false);
-        setisOpenShoppingCart(true);
-    }
-  
-    return (
-      <>
-       <aside className={`${infoProductOpen ? ' product-info fixed bg-gray-100 border-black right-0' : 'hidden'}`}>
-        
-       <div className='flex justify-end items-end'>
-            <div className='div-product-info-xmark rounded-full'>
-                <img src={xMark} alt="" className='cursor-pointer w-7'
-                onClick={() => setinfoProductOpen(false)}
-                />
-            </div>
+  // Open Cart View : Open aside cart with products in it
+  const openAsideCart = () => {
+    setinfoProductOpen(false);
+    setisOpenShoppingCart(true);
+  };
+
+  return (
+    <>
+      <aside
+        className={`${infoProductOpen ? " product-info fixed right-0 border-black bg-gray-100" : "hidden"}`}
+      >
+        <div className="flex items-end justify-end">
+          <div className="div-product-info-xmark rounded-full">
+            <img
+              src={xMark}
+              alt=""
+              className="w-7 cursor-pointer"
+              onClick={() => setinfoProductOpen(false)}
+            />
+          </div>
         </div>
-        
-       <div className='flex flex-col justify-between items-center mt-5'>
-            <p className='product-info-title text-center font-semibold mt-6 ml-2'>{ProductInfoFill.title}</p>
+
+        <div className="mt-5 flex flex-col items-center justify-between">
+          <p className="product-info-title ml-2 mt-6 text-center font-semibold">
+            {ProductInfoFill.title}
+          </p>
         </div>
 
-        <div className='flex justify-center items-center flex-col'>
-            <img src={ProductInfoFill.image} alt="product-image" className='product-info-image object-cover mt-10'/>
-            <div className='div-product-info-price-category flex justify-between items-center mt-1'>
-                <div className='div-description'>
-                <p className='overflow-auto'>{ProductInfoFill.description}</p>
-                </div>
-                <p className='div-product-info-price-in bg-green-500 font-semibold rounded-full p-2 pr-2 pl-2 text-white'>{`$${ProductInfoFill.price}`}</p>
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={ProductInfoFill.image}
+            alt="product-image"
+            className="product-info-image mt-10 object-cover"
+          />
+          <div className="div-product-info-price-category mt-1 flex items-center justify-between">
+            <div className="div-description">
+              <p className="overflow-auto">{ProductInfoFill.description}</p>
             </div>
-            <button className='add-to-cart-button bg-green-500 text-white font-semibold'
+            <p className="div-product-info-price-in rounded-full bg-green-500 p-2 pl-2 pr-2 font-semibold text-white">{`$${ProductInfoFill.price}`}</p>
+          </div>
+          <button
+            className="add-to-cart-button bg-green-500 font-semibold text-white"
             onClick={() => {
-                addToCart(ProductInfoFill);
-            }}>Add to Cart ⚡</button>                
+              addToCart(ProductInfoFill);
+            }}
+          >
+            Add to Cart ⚡
+          </button>
         </div>
-       </aside>
-      </>
-    )
+      </aside>
+    </>
+  );
 }
-  
-export default ProductInfo
+
+export default ProductInfo;

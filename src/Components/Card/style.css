@@ -1,28 +1,28 @@
 .div-info-product {
-    height: 24rem;
-    width: 20rem;
-    margin-top: 2rem;
+  height: 24rem;
+  width: 20rem;
+  margin-top: 2rem;
 }
 
 .image-product-card {
-    height: 20rem;
-    width: 100%;
+  height: 20rem;
+  width: 100%;
 }
 
 .tag-name-card {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .product-name-card {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 .price-name-card {
-    font-size: 1.5rem;
-    color: green;
+  font-size: 1.5rem;
+  color: green;
 }
 
 .div-product-card-price-title {
-    height: auto;
-    width: full;
+  height: auto;
+  width: full;
 }

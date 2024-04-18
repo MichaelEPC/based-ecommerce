@@ -1,86 +1,91 @@
 import React from "react";
 import { ProductContext } from "../../Context";
-import addToCartIcon from '../../imgs/add.sm.png';
-import './style.css';
+import addToCartIcon from "../../imgs/add.sm.png";
+import "./style.css";
 
-function Card({ products, }) {
+function Card({ products }) {
+  const {
+    setItemNumber,
+    itemNumber,
+    setinfoProductOpen,
+    setProductInfoFill,
+    setisOpenShoppingCart,
+    setIsAccountSideOpen,
+    setIsAccountSideOpenSingUp,
+    setShoppingProducts,
+    shoppingProducts,
+    setCurrentUser,
+    currentUser,
+    setUsers,
+    users,
+  } = React.useContext(ProductContext);
 
-    const {
-        setItemNumber, 
-        itemNumber, 
-        setinfoProductOpen, 
-        setProductInfoFill, 
-        setisOpenShoppingCart,
-        setIsAccountSideOpen,
-        setIsAccountSideOpenSingUp,
-        setShoppingProducts,
-        shoppingProducts,
-        setCurrentUser,
-        currentUser,
-        setUsers,
-        users,
-    } = React.useContext(ProductContext);
+  // Render Product Infomation : Saves Info product / Open aside info product
+  const renderInfoProduct = () => {
+    setProductInfoFill(products);
+    openAsideInfo();
+  };
 
-    // Render Product Infomation : Saves Info product / Open aside info product
-    const renderInfoProduct = () => {
-        setProductInfoFill(products);    
-        openAsideInfo()
-    }
+  // Add To cart : Add Product To The Shopping Cart Array
+  const addToCart = (products) => {
+    setItemNumber(itemNumber + 1);
+    let listOfProducts = shoppingProducts;
+    listOfProducts.push(products);
+    setShoppingProducts(listOfProducts);
+    openAsideCart();
+  };
 
-    // Add To cart : Add Product To The Shopping Cart Array 
-    const addToCart = (products) => {
-        setItemNumber(itemNumber + 1);
-        let listOfProducts = shoppingProducts;
-        listOfProducts.push(products);
-        setShoppingProducts(listOfProducts);
-        openAsideCart();
-    }
+  // Open Product Info : Open aside with the product information
+  const openAsideInfo = () => {
+    setinfoProductOpen(true);
+    setisOpenShoppingCart(false);
+    setIsAccountSideOpen(false);
+    setIsAccountSideOpenSingUp(false);
+  };
 
-    // Open Product Info : Open aside with the product information
-    const openAsideInfo = () => {
-        setinfoProductOpen(true);
-        setisOpenShoppingCart(false);
-        setIsAccountSideOpen(false)
-        setIsAccountSideOpenSingUp(false)
-    }
+  // Open Cart View : Open aside cart with the products that been added
+  const openAsideCart = () => {
+    setisOpenShoppingCart(true);
+    setinfoProductOpen(false);
+    setIsAccountSideOpen(false);
+    setIsAccountSideOpenSingUp(false);
+  };
 
-    // Open Cart View : Open aside cart with the products that been added
-    const openAsideCart = () => {
-        setisOpenShoppingCart(true);
-        setinfoProductOpen(false);
-        setIsAccountSideOpen(false);
-        setIsAccountSideOpenSingUp(false);
-    }
-
-    return (
-      <>
-       <div className="div-info-product bg-gray-100 rounded-lg cursor-pointer">
-
+  return (
+    <>
+      <div className="div-info-product cursor-pointer rounded-lg bg-gray-100">
         <figure className="relative mb-4 w-full ">
-            
-            <div className="absolute top-0 right-0 flex justify-center items-center bg-white rounded-full w-8 h-8 m-2">
-                <img src={ addToCartIcon } alt="" onClick={() => addToCart(products) }/>
-            </div>
+          <div className="absolute right-0 top-0 m-2 flex h-8 w-8 items-center justify-center rounded-full bg-white">
+            <img
+              src={addToCartIcon}
+              alt=""
+              onClick={() => addToCart(products)}
+            />
+          </div>
 
-            <img src={ products.image } alt="product-img" className="image-product-card w-full object-cover rounded-2xl"
-            onClick={() => renderInfoProduct( products )}/>
+          <img
+            src={products.image}
+            alt="product-img"
+            className="image-product-card w-full rounded-2xl object-cover"
+            onClick={() => renderInfoProduct(products)}
+          />
 
-            <div className="bg-white w-full">
-                <span className="tag-name-card absolute bottom-2 left-4 bg-white text-black pr-2 pl-1 font-semibold rounded-e-2xl">
-                    { products.category }
-                </span>
-            </div>
-
+          <div className="w-full bg-white">
+            <span className="tag-name-card absolute bottom-2 left-4 rounded-e-2xl bg-white pl-1 pr-2 font-semibold text-black">
+              {products.category}
+            </span>
+          </div>
         </figure>
 
         <div className="div-product-card-price-title flex justify-between">
-            <span className="product-name-card ml-2 truncate">{ products.title }</span>
-            <span className="price-name-card font-semibold pr-2 pl-1">{`$${ products.price }`}</span>
+          <span className="product-name-card ml-2 truncate">
+            {products.title}
+          </span>
+          <span className="price-name-card pl-1 pr-2 font-semibold">{`$${products.price}`}</span>
         </div>
-        
-       </div>
-      </>
-    )
-  }
-  
-  export default Card
+      </div>
+    </>
+  );
+}
+
+export default Card;

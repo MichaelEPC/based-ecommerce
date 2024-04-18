@@ -1,13 +1,9 @@
-
 function Layout({ children }) {
-
   return (
     <>
-     <div className='layout flex flex-col items-center mt-20'>
-        {children}
-     </div>
+      <div className="layout mt-20 flex flex-col items-center">{children}</div>
     </>
-  )
+  );
 }
 
-export default Layout
+export default Layout;

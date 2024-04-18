@@ -1,131 +1,130 @@
 .my-account-main-container {
-    height: auto;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .my-account-edit-container {
-    height: 22rem;
-    width: 32rem;
-    border-top: 0.2rem solid rgb(148, 148, 148);
-    border-left: 0.2rem solid rgb(148, 148, 148);
-    border-bottom: 0.2rem solid rgb(148, 148, 148);
+  height: 22rem;
+  width: 32rem;
+  border-top: 0.2rem solid rgb(148, 148, 148);
+  border-left: 0.2rem solid rgb(148, 148, 148);
+  border-bottom: 0.2rem solid rgb(148, 148, 148);
 }
 
 .my-account-container {
-    height: 78rem;
-    width: 48rem;
-    border: 0.2rem solid rgb(148, 148, 148);
+  height: 78rem;
+  width: 48rem;
+  border: 0.2rem solid rgb(148, 148, 148);
 }
 
 .my-account-input {
-    border: 0.2rem solid rgb(148, 148, 148);
-    width: 32rem;
-    height: 4rem;
-    font-size: 1.3rem;
-    padding-left: 0.5rem;
-    margin-top: 0.5rem;
+  border: 0.2rem solid rgb(148, 148, 148);
+  width: 32rem;
+  height: 4rem;
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .my-account-edit-container p {
-    height: 4rem;
-    font-size: 2.5rem;
+  height: 4rem;
+  font-size: 2.5rem;
 }
 
 .my-account-edit-container div {
-    height: 29rem;
-    width: 22rem;
-} 
+  height: 29rem;
+  width: 22rem;
+}
 
 .my-account-input-container span {
-    font-size: 2.5rem;
-    font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .my-account-input-container {
-    margin-top: 1rem;
-    margin-left: 2rem;
+  margin-top: 1rem;
+  margin-left: 2rem;
 }
 
 .my-account-input-container p {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .my-account-green-button {
-    height: 4rem;
-    width: 24rem;
-    font-size: 1.5rem;
-    margin-top: 4.5rem;
+  height: 4rem;
+  width: 24rem;
+  font-size: 1.5rem;
+  margin-top: 4.5rem;
 }
 
-
 .my-account-red-button {
-    height: 4rem;
-    width: 16rem;
-    font-size: 1.3rem;
+  height: 4rem;
+  width: 16rem;
+  font-size: 1.3rem;
 }
 
 .underlined {
-    position: relative;
+  position: relative;
 }
-    
+
 .underline-clip:after {
-    content: '';
-    position: absolute;
-    top: 95%;
-    width: 150%;
-    aspect-ratio: 3 / 1;
-    left: 50%;
-    transform: translate(-50%, 0);
-    border-radius: 50%;
-    border: 6px solid hsl(130 80% 50%);
-    clip-path: polygon(0 0, 50% 50%, 100% 0);
+  content: "";
+  position: absolute;
+  top: 95%;
+  width: 150%;
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6px solid hsl(130 80% 50%);
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
 }
 
 @media screen and (max-width: 580px) {
-    .my-account-main-container {
-        height: auto;
-        width: 100%;
-        flex-direction: column-reverse;
-    }
-    .my-account-edit-container {
-        height: 16rem;
-        width: 32rem;
-        border-right: 0.2rem solid rgb(148, 148, 148);
-    }
+  .my-account-main-container {
+    height: auto;
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  .my-account-edit-container {
+    height: 16rem;
+    width: 32rem;
+    border-right: 0.2rem solid rgb(148, 148, 148);
+  }
 }
 
 @media screen and (max-width: 485px) {
-    .my-account-container   {
-        height: auto;
-        width: 40rem;
-        flex-direction: column-reverse;
-    }
-    .my-account-edit-container {
-        height: 16rem;
-        width: 40rem;
-        border-right: 0.2rem solid rgb(148, 148, 148);
-    }
-    .my-account-green-button {
-        margin-bottom: 2rem;
-    }
+  .my-account-container {
+    height: auto;
+    width: 40rem;
+    flex-direction: column-reverse;
+  }
+  .my-account-edit-container {
+    height: 16rem;
+    width: 40rem;
+    border-right: 0.2rem solid rgb(148, 148, 148);
+  }
+  .my-account-green-button {
+    margin-bottom: 2rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
-    .my-account-container   {
-        height: auto;
-        width: 30rem;
-        flex-direction: column-reverse;
-    }
-    .my-account-edit-container {
-        height: 16rem;
-        width: 24rem;
-    }
-    .my-account-green-button {
-        margin-bottom: 2rem;
-    }
-    .my-account-input {
-        width: 26rem;
-    }
+  .my-account-container {
+    height: auto;
+    width: 30rem;
+    flex-direction: column-reverse;
+  }
+  .my-account-edit-container {
+    height: 16rem;
+    width: 24rem;
+  }
+  .my-account-green-button {
+    margin-bottom: 2rem;
+  }
+  .my-account-input {
+    width: 26rem;
+  }
 }

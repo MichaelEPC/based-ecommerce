@@ -1,67 +1,66 @@
 .input-search-products {
-    width: 30rem;
-    height: 4rem;
-    border: 0.2rem solid rgb(148, 148, 148);
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.32);
-    border-radius: 1.6rem;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    font-size: 1.4rem;
+  width: 30rem;
+  height: 4rem;
+  border: 0.2rem solid rgb(148, 148, 148);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 1.6rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-size: 1.4rem;
 }
 
 .div-search-input {
-    width: 30rem;
-    height: 8rem;
-    margin-top: 4rem;
+  width: 30rem;
+  height: 8rem;
+  margin-top: 4rem;
 }
 
 .div-search-input p {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .main-grid-products {
-    height: auto;
-    width: 100%;
-    max-width: 110.4rem;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 4;
-    grid-template-columns: repeat(4, 1fr);
+  height: auto;
+  width: 100%;
+  max-width: 110.4rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 4;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 @media screen and (max-width: 900px) {
-    .main-grid-products {
-        height: auto;
-        width: 100%;
-        max-width: 77.4rem;
-        display: grid;
-        gap: 2.5rem;
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .main-grid-products {
+    height: auto;
+    width: 100%;
+    max-width: 77.4rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .main-grid-products {
-        height: auto;
-        width: 100%;
-        max-width: 47.4rem;
-        display: grid;
-        gap: 1.5rem;
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .main-grid-products {
+    height: auto;
+    width: 100%;
+    max-width: 47.4rem;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media screen and (max-width: 420px) {
-    .main-grid-products {
-        height: auto;
-        width: 100%;
-        max-width: 20rem;
-        display: grid;
-        gap: 0.5rem;
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .main-grid-products {
+    height: auto;
+    width: 100%;
+    max-width: 20rem;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
-

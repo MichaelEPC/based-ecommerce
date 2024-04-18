@@ -1,14 +1,13 @@
-import React from 'react'
-import AppUI from './AppUI'
-import { ProductProvider } from '../../Context'
-
+import React from "react";
+import AppUI from "./AppUI";
+import { ProductProvider } from "../../Context";
 
 function App() {
   return (
     <ProductProvider>
-    <AppUI/>
+      <AppUI />
     </ProductProvider>
-  )
+  );
 }
 
-export default App
+export default App;

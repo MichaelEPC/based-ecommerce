@@ -1,18 +1,16 @@
-import Layout from "../../Components/Layout"
-import { ProductContext } from '../../Context'
+import Layout from "../../Components/Layout";
+import { ProductContext } from "../../Context";
 
 function NotFound() {
-  const {
-    
-  } = React.useContext(ProductContext);
+  const {} = React.useContext(ProductContext);
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Layout>
         <p>NotFound</p>
       </Layout>
     </>
-  )
+  );
 }
-  
-  export default NotFound
+
+export default NotFound;

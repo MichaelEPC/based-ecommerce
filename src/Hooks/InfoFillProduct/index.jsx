@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
 function InfoFillProduct(data, setProductInfoFill, setinfoProductOpen) {
-    setProductInfoFill(data);    
-    console.log(data);
-    setinfoProductOpen(true);
+  setProductInfoFill(data);
+  console.log(data);
+  setinfoProductOpen(true);
 }
 
-export default InfoFillProduct
+export default InfoFillProduct;

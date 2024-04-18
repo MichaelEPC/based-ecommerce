@@ -1,61 +1,61 @@
 .my-orders-container {
-    height: 75vh;
-    width: 50rem;
-    border: 1px solid black;
+  height: 75vh;
+  width: 50rem;
+  border: 1px solid black;
 }
 
 .title-my-orders {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .underlined {
-    position: relative;
+  position: relative;
 }
-    
+
 .underline-clip:after {
-    content: '';
-    position: absolute;
-    top: 95%;
-    width: 150%;
-    aspect-ratio: 3 / 1;
-    left: 50%;
-    transform: translate(-50%, 0);
-    border-radius: 50%;
-    border: 6px solid hsl(130 80% 50%);
-    clip-path: polygon(0 0, 50% 50%, 100% 0);
+  content: "";
+  position: absolute;
+  top: 95%;
+  width: 150%;
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6px solid hsl(130 80% 50%);
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
 }
 
 .info-div-my-orders {
-    height: 4rem;
-    width: 42rem;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.46);
-    border-radius: 1.6rem;
-    box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.8px);
-    -webkit-backdrop-filter: blur(9.8px);
-    border: 1px solid rgba(255, 255, 255, 0.81);
+  height: 4rem;
+  width: 42rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.46);
+  border-radius: 1.6rem;
+  box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.8px);
+  -webkit-backdrop-filter: blur(9.8px);
+  border: 1px solid rgba(255, 255, 255, 0.81);
 }
 
 .info-div-my-orders p {
-    height: auto;
-    width: auto;
-    font-size: 1.5rem;
+  height: auto;
+  width: auto;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 510px) {
-    .my-orders-container {
-        width: 42rem;
-    }
+  .my-orders-container {
+    width: 42rem;
+  }
 }
 
 @media screen and (max-width: 430px) {
-    .my-orders-container {
-        width: 32rem;
-    }
-    .info-div-my-orders {
-        width: 32rem;
-    }
+  .my-orders-container {
+    width: 32rem;
+  }
+  .info-div-my-orders {
+    width: 32rem;
+  }
 }

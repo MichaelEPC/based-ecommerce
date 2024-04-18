@@ -1,126 +1,127 @@
-
 .main-container {
-    width: 45rem;
-    height: 68rem;
-    /* From https://css.glass */
-    background: rgba(218, 203, 203, 0.28);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 45rem;
+  height: 68rem;
+  /* From https://css.glass */
+  background: rgba(218, 203, 203, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .div-icon {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.38);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
-    border: 1px solid rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .store-icon {
-    margin-top: 2rem;
-    height: 10rem;
+  margin-top: 2rem;
+  height: 10rem;
 }
 
 .input-container {
-    width: 44rem;
-    height: 100%;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.53);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.8px);
-    -webkit-backdrop-filter: blur(9.8px);
-    border: 1px solid rgba(255, 255, 255, 1);
-    margin-bottom: 2rem;
+  width: 44rem;
+  height: 100%;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.53);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.8px);
+  -webkit-backdrop-filter: blur(9.8px);
+  border: 1px solid rgba(255, 255, 255, 1);
+  margin-bottom: 2rem;
 }
 
 form {
-    width: 70%;
+  width: 70%;
 }
 
 .sing-up-title {
-    font-size: 5rem;
-    margin-top: 2rem;
-    text-decoration: underline;
+  font-size: 5rem;
+  margin-top: 2rem;
+  text-decoration: underline;
 }
 
 .info-text {
-    height: auto;
-    width: 1rem;
-    font-size: 2rem;
+  height: auto;
+  width: 1rem;
+  font-size: 2rem;
 }
 
 .reduce-width {
-    width: 2rem;
+  width: 2rem;
 }
 
 .form-input {
-    border: 0.2rem solid rgb(148, 148, 148);
-    width: 32rem;
-    height: 4rem;
-    font-size: 1.3rem;
-    padding-left: 0.5rem;
-    margin-top: 0.5rem;
+  border: 0.2rem solid rgb(148, 148, 148);
+  width: 32rem;
+  height: 4rem;
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .forgot-text {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .sign-button {
-    width: 25rem;
-    height: 5rem;
-    font-size: 1.5rem;
+  width: 25rem;
+  height: 5rem;
+  font-size: 1.5rem;
 }
 
 .createAccount-text {
-    width: 28rem;
-    height: 5rem;
-    font-size: 1.5rem;
-    margin-top: 2.3rem;
-    transition: box-shadow .25s ease-in-out,background-color .2s ease-out;
+  width: 28rem;
+  height: 5rem;
+  font-size: 1.5rem;
+  margin-top: 2.3rem;
+  transition:
+    box-shadow 0.25s ease-in-out,
+    background-color 0.2s ease-out;
 }
 
 .createAccount-text:hover {
-    color: rgb(196, 85, 0);
-    text-decoration: underline;
-    animation: pulse 1s linear infinite;
-  }
-  
+  color: rgb(196, 85, 0);
+  text-decoration: underline;
+  animation: pulse 1s linear infinite;
+}
+
 @keyframes pulse {
-0% {
+  0% {
     transform: scale(1);
-}
+  }
 
-50% {
+  50% {
     transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
-100% {
-    transform: scale(1);
-}
-}
-  
 @media screen and (max-width: 460px) {
-    .main-container {
-        width: 32rem;
-    }
-    .input-container {
-        width: 31rem;
-    }
-    .form-input {
-        width: 22rem;
-    }
+  .main-container {
+    width: 32rem;
+  }
+  .input-container {
+    width: 31rem;
+  }
+  .form-input {
+    width: 22rem;
+  }
 }

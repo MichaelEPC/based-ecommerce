@@ -1,67 +1,67 @@
 .my-order-container {
-    height: auto;
-    width: auto;
+  height: auto;
+  width: auto;
 }
 
 .title-my-order p {
-    font-size: 2rem;
-    font-family: sans-serif;
+  font-size: 2rem;
+  font-family: sans-serif;
 }
 
 .my-order-products-container {
-    height: 60rem;
-    width: 52rem;
-    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.1);
+  height: 60rem;
+  width: 52rem;
+  box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.1);
 }
 
 .order-info-container {
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .info-div-my-order {
-    height: 4rem;
-    width: 30rem;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.46);
-    border-radius: 1.6rem;
-    box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.8px);
-    -webkit-backdrop-filter: blur(9.8px);
-    border: 1px solid rgba(255, 255, 255, 0.81);
+  height: 4rem;
+  width: 30rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.46);
+  border-radius: 1.6rem;
+  box-shadow: 0 0.4rem 3rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.8px);
+  -webkit-backdrop-filter: blur(9.8px);
+  border: 1px solid rgba(255, 255, 255, 0.81);
 }
 
 .info-div-my-order p {
-    height: auto;
-    width: auto;
-    font-size: 1.5rem;
+  height: auto;
+  width: auto;
+  font-size: 1.5rem;
 }
 
 .a-my-order {
-    font-size: 1.2rem;
-    color: rgb(34, 197, 94);
-    margin-top: 1rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.2rem;
+  color: rgb(34, 197, 94);
+  margin-top: 1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .a-my-order:hover {
-    color: rgb(196, 85, 0);
+  color: rgb(196, 85, 0);
 }
 
 @media screen and (max-width: 530px) {
-    .my-order-products-container {
-        width: 42rem;
-    }
+  .my-order-products-container {
+    width: 42rem;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    .my-order-products-container {
-        width: 32rem;
-    }
+  .my-order-products-container {
+    width: 32rem;
+  }
 }

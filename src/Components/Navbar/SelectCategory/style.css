@@ -1,40 +1,40 @@
 .aside-nav-category {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    top: 7rem;
-    right: 0;
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.34);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.7px);
-    -webkit-backdrop-filter: blur(8.7px);
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 7rem;
+  right: 0;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
 }
 
 .aside-nav-category div {
-    height: 42rem;
-    width: 36rem;
-    top: 7rem;
-    background-color: white;
+  height: 42rem;
+  width: 36rem;
+  top: 7rem;
+  background-color: white;
 }
 
 .aside-nav-category div div {
-    height: 8rem;
-    width: 28rem;
-    border-bottom: 0.1rem solid #A6A3A3;
+  height: 8rem;
+  width: 28rem;
+  border-bottom: 0.1rem solid #a6a3a3;
 }
 
 .nav-items-text-mobile {
-    color: #1FB456;
+  color: #1fb456;
 }
 
 .aside-nav-category div div:active {
-    height: 8rem;
-    width: 28rem;
-    background-color: #1FB456;
-    border-bottom: 0.1rem solid white;
-    .nav-items-text-mobile {
-        color: yellow;
-    }
+  height: 8rem;
+  width: 28rem;
+  background-color: #1fb456;
+  border-bottom: 0.1rem solid white;
+  .nav-items-text-mobile {
+    color: yellow;
+  }
 }
