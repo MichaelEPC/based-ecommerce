@@ -1,11 +1,13 @@
 import React from "react";
 import { ProductContext } from "../../Context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import backIcon from "../../imgs/flecha-izquierda.png";
 import "./style.css";
 import storeIcon from "../../imgs/storeIcon.png";
 
 function SignUpCont() {
+  const navigate = useNavigate();
+
   const { users, setUsers, userID, setUserID } =
     React.useContext(ProductContext);
 
@@ -31,9 +33,8 @@ function SignUpCont() {
     };
     const copyOfUser = users;
     copyOfUser.push(newUser);
-    console.log(copyOfUser);
     setUsers(copyOfUser);
-    window.location.href = "/based-online-product-store/";
+    navigate("/based-ecommerce/");
   };
 
   return (
@@ -42,7 +43,7 @@ function SignUpCont() {
         <div className="signup-container mt-4 flex flex-col items-center rounded-lg">
           <div className="flex flex-col items-center">
             <div className="div-icon w-48 rounded-full">
-              <Link to={"/based-online-product-store/home"}>
+              <Link to={"/based-ecommerce/home"}>
                 <img className="store-icon" src={storeIcon} alt="icon" />
               </Link>
             </div>
@@ -119,7 +120,7 @@ function SignUpCont() {
             </form>
 
             <div>
-              <Link to={"/based-online-product-store/sing-in"}>
+              <Link to={"/based-ecommerce/sing-in"}>
                 <img
                   src={backIcon}
                   alt="back"

@@ -41,7 +41,7 @@ function MyOrdersCont() {
         {!loadingSkeletonItemOrders &&
           myOrders?.map((myOrders) => (
             <Link
-              to={`/based-online-product-store/my-order/${myOrders.id}`}
+              to={`/based-ecommerce/my-order/${myOrders.id}`}
               onClick={() => {
                 setPreviousOrder(myOrders.products);
               }}

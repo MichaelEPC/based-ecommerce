@@ -10,7 +10,7 @@ function MyOrderCont({ previousOrder }) {
     <>
       <div className="my-order-container flex flex-col">
         <div className="title-my-order">
-          <Link to={"/based-online-product-store/my-orders"}>
+          <Link to={"/based-ecommerce/my-orders"}>
             <img
               src={backIcon}
               alt="back"

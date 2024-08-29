@@ -2,7 +2,6 @@ import React from "react";
 import { ProductContext } from "../../Context";
 import Layout from "../../Components/Layout";
 import SignInCont from "../../Components/SingInCont";
-import "./style.css";
 
 function SignIn() {
   const { users, setIsUserSingIn, setCurrentUser } =

@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../../Context";
 import "./style.css";
 import storeIcon from "../../imgs/storeIcon.png";
 
 function SignInCont() {
+  const navigate = useNavigate();
+
   const { users, setIsUserSingIn, setCurrentUser, currentUser } =
     React.useContext(ProductContext);
 
@@ -18,7 +20,7 @@ function SignInCont() {
         if (copyOfUser.password === passwordValue) {
           setCurrentUser(copyOfUser);
           setIsUserSingIn(true);
-          window.location.href = "/based-online-product-store/home";
+          navigate("/based-ecommerce/home");
         }
       }
     }
@@ -30,7 +32,7 @@ function SignInCont() {
         <div className="main-container">
           <div className="flex flex-col items-center">
             <div className="div-icon w-48 rounded-full">
-              <Link to={"/based-online-product-store/home"}>
+              <Link to={"/based-ecommerce/home"}>
                 <img className="store-icon" src={storeIcon} alt="icon" />
               </Link>
             </div>
@@ -82,7 +84,7 @@ function SignInCont() {
           </div>
 
           <div className="flex flex-col items-center">
-            <Link to={"/based-online-product-store/sing-up"}>
+            <Link to={"/based-ecommerce/sing-up"}>
               <a
                 className="createAccount-text rounded-lg bg-transparent font-semibold text-green-500"
                 href=""

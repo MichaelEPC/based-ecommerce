@@ -37,34 +37,32 @@ const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
         const left = [
           {
             name: "All",
-            to: "/based-online-product-store/home",
+            to: "/based-ecommerce/home",
             onClick: "null",
           },
           {
             name: "men's clothing",
-            to: "/based-online-product-store/home/mens-clothing",
+            to: "/based-ecommerce/home/mens-clothing",
             on: "men's clothing",
           },
           {
             name: "women's clothing",
-            to: "/based-online-product-store/home/womens-clothing",
+            to: "/based-ecommerce/home/womens-clothing",
             on: "women's ",
           },
           {
             name: "jewelery",
-            to: "/based-online-product-store/home/jewelery",
+            to: "/based-ecommerce/home/jewelery",
             on: "jewelery",
           },
           {
             name: "electronics",
-            to: "/based-online-product-store/home/electronics",
+            to: "/based-ecommerce/home/electronics",
             on: "electronics",
           },
         ];
         // Right part of nav
-        const right = [
-          { name: "Sign-in", to: "/based-online-product-store/sing-in" },
-        ];
+        const right = [{ name: "Sign-in", to: "/based-ecommerce/sing-in" }];
         setLeftNav(left);
         setRightNav(right);
         return;
@@ -74,34 +72,32 @@ const updateNav = (isUserSingIn, setLeftNav, setRightNav, currentUser) => {
         const left = [
           {
             name: "All",
-            to: "/based-online-product-store/home",
+            to: "/based-ecommerce/home",
             onClick: "null",
           },
           {
             name: "men's clothing",
-            to: "/based-online-product-store/home/mens-clothing",
+            to: "/based-ecommerce/home/mens-clothing",
             on: "men's clothing",
           },
           {
             name: "women's clothing",
-            to: "/based-online-product-store/home/womens-clothing",
+            to: "/based-ecommerce/home/womens-clothing",
             on: "women's ",
           },
           {
             name: "jewelery",
-            to: "/based-online-product-store/home/jewelery",
+            to: "/based-ecommerce/home/jewelery",
             on: "jewelery",
           },
           {
             name: "electronics",
-            to: "/based-online-product-store/home/electronics",
+            to: "/based-ecommerce/home/electronics",
             on: "electronics",
           },
         ];
         // Right part of nav
-        const right = [
-          { name: "My Orders", to: "/based-online-product-store/my-orders" },
-        ];
+        const right = [{ name: "My Orders", to: "/based-ecommerce/my-orders" }];
         setLeftNav(left);
         setRightNav(right);
         return;

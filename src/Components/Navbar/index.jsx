@@ -78,7 +78,7 @@ function Navbar() {
     <nav className="navbar fixed top-0 z-10 flex w-full items-center justify-between bg-green-500 px-2 py-5 text-base">
       <ul className="flex items-center gap-3 ">
         <div className="div-icon-nav rounded-full">
-          <NavLink to={"/based-online-product-store/home"}>
+          <NavLink to={"/based-ecommerce/home"}>
             <img className="store-icon-nav" src={storeIcon} alt="icon" />
           </NavLink>
         </div>

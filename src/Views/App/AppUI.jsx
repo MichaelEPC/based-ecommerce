@@ -13,25 +13,25 @@ import "./App.css";
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path: "based-online-product-store/", element: <SignIn /> },
-    { path: "based-online-product-store/home", element: <Home /> },
+    { path: "/based-ecommerce/", element: <SignIn /> },
+    { path: "/based-ecommerce/home", element: <Home /> },
     {
-      path: "based-online-product-store/home/mens-clothing",
+      path: "/based-ecommerce/home/mens-clothing",
       element: <Home />,
     },
     {
-      path: "based-online-product-store/home/womens-clothing",
+      path: "/based-ecommerce/home/womens-clothing",
       element: <Home />,
     },
-    { path: "based-online-product-store/home/jewelery", element: <Home /> },
-    { path: "based-online-product-store/home/electronics", element: <Home /> },
-    { path: "based-online-product-store/my-account", element: <MyAccount /> },
-    { path: "based-online-product-store/my-order", element: <MyOrder /> },
-    { path: "based-online-product-store/my-order/last", element: <MyOrder /> },
-    { path: "based-online-product-store/my-orders", element: <MyOrders /> },
-    { path: "based-online-product-store/my-order/:id", element: <MyOrder /> },
-    { path: "based-online-product-store/sing-in", element: <SignIn /> },
-    { path: "based-online-product-store/sing-up", element: <SingUp /> },
+    { path: "/based-ecommerce/home/jewelery", element: <Home /> },
+    { path: "/based-ecommerce/home/electronics", element: <Home /> },
+    { path: "/based-ecommerce/my-account", element: <MyAccount /> },
+    { path: "/based-ecommerce/my-order", element: <MyOrder /> },
+    { path: "/based-ecommerce/my-order/last", element: <MyOrder /> },
+    { path: "/based-ecommerce/my-orders", element: <MyOrders /> },
+    { path: "/based-ecommerce/my-order/:id", element: <MyOrder /> },
+    { path: "/based-ecommerce/sign-in", element: <SignIn /> },
+    { path: "/based-ecommerce/sign-up", element: <SingUp /> },
     { path: "/*", element: <NotFound /> },
   ]);
   return routes;

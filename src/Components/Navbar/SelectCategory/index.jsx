@@ -1,7 +1,5 @@
-import React from "react";
 import "./style.css";
 import NavItemsMobile from "../NavItemsMobile";
-import { ProductContext } from "../../../Context";
 
 function SelectCategory({
   navbarButtonMobile,

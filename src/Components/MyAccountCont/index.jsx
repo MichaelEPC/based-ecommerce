@@ -1,10 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../../Context";
 import storeIcon from "../../imgs/storeIcon.png";
 import "./style.css";
 
-function MyAccountCont({}) {
+function MyAccountCont() {
+  const navigate = useNavigate();
+
   const { currentUser, setIsUserSingIn, setCurrentUser, setUsers, users } =
     React.useContext(ProductContext);
 
@@ -22,7 +24,7 @@ function MyAccountCont({}) {
     setUsers(usersList);
     setIsUserSingIn("false");
     setCurrentUser({});
-    window.location.href = "/based-online-product-store/sing-in";
+    navigate("/based-ecommerce/sign-in");
   };
 
   const handleEditAccount = (event) => {
@@ -83,7 +85,7 @@ function MyAccountCont({}) {
           <div className="my-account-container rounded-lg">
             <div className="flex flex-col items-center">
               <div className="div-icon w-48 rounded-full">
-                <Link to={"/based-online-product-store/home"}>
+                <Link to={"/based-ecommerce/home"}>
                   <img className="store-icon" src={storeIcon} alt="icon" />
                 </Link>
               </div>
